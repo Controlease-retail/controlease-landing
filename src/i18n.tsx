@@ -11,6 +11,7 @@ const translations = {
       partners: 'Platform',
       programs: 'Modules',
       impact: 'Value',
+      pricing: 'Pricing',
       contact: 'Contact',
     },
     home: {
@@ -19,8 +20,8 @@ const translations = {
         title: 'The central nervous system for your lease portfolio.',
         description:
           'Unify capture, approvals, operations, renewals, compliance, and analytics into one modern workspace. Optimized for multi-country portfolios and strict governance.',
-        primaryCta: 'Request Demo',
-        secondaryCta: 'Read Documentation',
+        primaryCta: 'Start for Free',
+        secondaryCta: 'Request a demo',
         metrics: [
           { label: 'Lease Lifecycle', value: 'End-to-End' },
           { label: 'Data Source', value: 'Single Truth' },
@@ -79,7 +80,7 @@ const translations = {
         brand: 'Controlease',
         tagline: 'Enterprise Lease OS',
         signIn: 'Sign In',
-        requestDemo: 'Request Demo',
+        requestDemo: 'Start for Free',
         nav: [
           {
             label: 'Platform',
@@ -109,6 +110,10 @@ const translations = {
               { title: 'Case Studies', desc: 'Success stories & metrics', path: '/resources/case-studies' },
               { title: 'System Status', desc: 'Platform availability', path: '/resources/status' },
             ],
+          },
+          {
+            label: 'Pricing',
+            path: '/pricing',
           },
           {
             label: 'Company',
@@ -396,6 +401,57 @@ const translations = {
         { name: 'Support', email: 'support@controlease.com', phone: '+1 (555) 987-6543' },
       ],
     },
+    pricing: {
+      title: 'Simple, Transparent Pricing',
+      subtitle: 'Choose the plan that fits your portfolio size and needs.',
+      plans: [
+        {
+          name: 'Trial',
+          price: 'Free',
+          period: '/ 14 days',
+          description: 'Perfect for testing the platform capabilities.',
+          features: ['1 User', 'Up to 10 Leases', 'Basic Analytics', 'Standard Support'],
+          cta: 'Start Trial',
+          highlight: false
+        },
+        {
+          name: 'Basic',
+          price: '$499',
+          period: '/ month',
+          description: 'For small portfolios and single teams.',
+          features: ['5 Users', 'Up to 50 Leases', 'Document Storage', 'Email Support'],
+          cta: 'Get Basic',
+          highlight: false
+        },
+        {
+          name: 'Pro',
+          price: '$999',
+          period: '/ month',
+          description: 'For growing companies with multiple locations.',
+          features: ['Unlimited Users', 'Up to 200 Leases', 'Advanced Analytics', 'Priority Support', 'API Access'],
+          cta: 'Get Pro',
+          highlight: true
+        },
+        {
+          name: 'Pro +',
+          price: '$1,499',
+          period: '/ month',
+          description: 'Advanced compliance and automation tools.',
+          features: ['Everything in Pro', 'Up to 500 Leases', 'AI Assistant', 'Audit Logs', 'SSO Integration'],
+          cta: 'Get Pro +',
+          highlight: false
+        },
+        {
+          name: 'Enterprise',
+          price: 'Custom',
+          period: '',
+          description: 'For global organizations with complex needs.',
+          features: ['Unlimited Leases', 'Custom Integrations', 'Dedicated Success Manager', 'SLA Guarantee', 'On-premise Option'],
+          cta: 'Contact Sales',
+          highlight: false
+        }
+      ]
+    },
     footer: {
       summary: 'Controlease is the operating system for multi-country retail lease portfolios.',
       rights: 'All rights reserved.',
@@ -408,6 +464,7 @@ const translations = {
       partners: 'Plataforma',
       programs: 'Módulos',
       impact: 'Valor',
+      pricing: 'Precios',
       contact: 'Contacto',
     },
     home: {
@@ -417,7 +474,7 @@ const translations = {
         description:
           'Unifique captura, aprobaciones, operaciones, renovaciones, cumplimiento y análisis en un espacio de trabajo moderno. Optimizado para carteras multinacionales.',
         primaryCta: 'Solicitar Demo',
-        secondaryCta: 'Leer Documentación',
+        secondaryCta: 'Solicitar Demo',
         metrics: [
           { label: 'Ciclo de Vida', value: 'De Punta a Punta' },
           { label: 'Fuente de Datos', value: 'Única Verdad' },
@@ -476,7 +533,7 @@ const translations = {
         brand: 'Controlease',
         tagline: 'Sistema Operativo Empresarial',
         signIn: 'Iniciar sesión',
-        requestDemo: 'Solicitar demo',
+        requestDemo: 'Empezar gratis',
         nav: [
           {
             label: 'Plataforma',
@@ -506,6 +563,10 @@ const translations = {
               { title: 'Casos de Estudio', desc: 'Historias de éxito y métricas', path: '/resources/case-studies' },
               { title: 'Estado del Sistema', desc: 'Disponibilidad de la plataforma', path: '/resources/status' },
             ],
+          },
+          {
+            label: 'Precios',
+            path: '/pricing',
           },
           {
             label: 'Compañía',
@@ -655,7 +716,7 @@ const translations = {
             title: 'Plataforma',
             links: [
               { label: 'Gestión de contratos', href: '#' },
-              { label: 'Motor financiero', href: '#' },
+              { label: 'Motor financeiro', href: '#' },
               { label: 'Cumplimiento', href: '#' },
               { label: 'Asistente IA', href: '#' },
             ],
@@ -744,6 +805,57 @@ const translations = {
         { name: 'Soporte', email: 'support@controlease.com', phone: '+1 (555) 987-6543' },
       ],
     },
+    pricing: {
+      title: 'Precios Simples y Transparentes',
+      subtitle: 'Elija el plan que se adapte al tamaño y necesidades de su portafolio.',
+      plans: [
+        {
+          name: 'Prueba',
+          price: 'Gratis',
+          period: '/ 14 días',
+          description: 'Perfecto para probar las capacidades de la plataforma.',
+          features: ['1 Usuario', 'Hasta 10 Contratos', 'Analítica Básica', 'Soporte Estándar'],
+          cta: 'Iniciar Prueba',
+          highlight: false
+        },
+        {
+          name: 'Básico',
+          price: '$499',
+          period: '/ mes',
+          description: 'Para pequeños portafolios y equipos individuales.',
+          features: ['5 Usuarios', 'Hasta 50 Contratos', 'Almacenamiento de Docs', 'Soporte por Email'],
+          cta: 'Obtener Básico',
+          highlight: false
+        },
+        {
+          name: 'Pro',
+          price: '$999',
+          period: '/ mes',
+          description: 'Para empresas en crecimiento con múltiples ubicaciones.',
+          features: ['Usuarios Ilimitados', 'Hasta 200 Contratos', 'Analítica Avanzada', 'Soporte Prioritario', 'Acceso API'],
+          cta: 'Obtener Pro',
+          highlight: true
+        },
+        {
+          name: 'Pro +',
+          price: '$1,499',
+          period: '/ mes',
+          description: 'Herramientas avanzadas de cumplimiento y automatización.',
+          features: ['Todo en Pro', 'Hasta 500 Contratos', 'Asistente IA', 'Logs de Auditoría', 'Integración SSO'],
+          cta: 'Obtener Pro +',
+          highlight: false
+        },
+        {
+          name: 'Empresarial',
+          price: 'A medida',
+          period: '',
+          description: 'Para organizaciones globales con necesidades complejas.',
+          features: ['Contratos Ilimitados', 'Integraciones Personalizadas', 'Gerente de Éxito Dedicado', 'Garantía SLA', 'Opción On-premise'],
+          cta: 'Contactar Ventas',
+          highlight: false
+        }
+      ]
+    },
     footer: {
       summary: 'Controlease es el sistema operativo para carteras de arrendamiento minorista multinacionales.',
       rights: 'Todos los derechos reservados.',
@@ -756,6 +868,7 @@ const translations = {
       partners: 'Plataforma',
       programs: 'Módulos',
       impact: 'Valor',
+      pricing: 'Preços',
       contact: 'Contato',
     },
     home: {
@@ -764,8 +877,8 @@ const translations = {
         title: 'O sistema nervoso central para seu portfólio de locações.',
         description:
           'Unifique captura, aprovações, operações, renovações, compliance e análises em um workspace moderno. Otimizado para portfólios multinacionais.',
-        primaryCta: 'Solicitar Demo',
-        secondaryCta: 'Ler Documentação',
+        primaryCta: 'Começar grátis',
+        secondaryCta: 'Solicitar Demo',
         metrics: [
           { label: 'Ciclo de Vida', value: 'Ponta a Ponta' },
           { label: 'Fonte de Dados', value: 'Verdade Única' },
@@ -824,7 +937,7 @@ const translations = {
         brand: 'Controlease',
         tagline: 'Sistema Operacional Empresarial',
         signIn: 'Entrar',
-        requestDemo: 'Solicitar demo',
+        requestDemo: 'Começar grátis',
         nav: [
           {
             label: 'Plataforma',
@@ -854,6 +967,10 @@ const translations = {
               { title: 'Estudos de Caso', desc: 'Histórias de sucesso e métricas', path: '/resources/case-studies' },
               { title: 'Status do Sistema', desc: 'Disponibilidade da plataforma', path: '/resources/status' },
             ],
+          },
+          {
+            label: 'Preços',
+            path: '/pricing',
           },
           {
             label: 'Empresa',
@@ -1091,6 +1208,57 @@ const translations = {
         { name: 'Sede Global', email: 'contact@controlease.com', phone: '+1 (555) 123-4567' },
         { name: 'Suporte', email: 'support@controlease.com', phone: '+1 (555) 987-6543' },
       ],
+    },
+    pricing: {
+      title: 'Preços Simples e Transparentes',
+      subtitle: 'Escolha o plano que se adapta ao tamanho e necessidades do seu portfólio.',
+      plans: [
+        {
+          name: 'Teste',
+          price: 'Grátis',
+          period: '/ 14 dias',
+          description: 'Perfeito para testar as capacidades da plataforma.',
+          features: ['1 Usuário', 'Até 10 Contratos', 'Analytics Básico', 'Suporte Padrão'],
+          cta: 'Iniciar Teste',
+          highlight: false
+        },
+        {
+          name: 'Básico',
+          price: '$499',
+          period: '/ mês',
+          description: 'Para pequenos portfólios e equipes individuais.',
+          features: ['5 Usuários', 'Até 50 Contratos', 'Armazenamento de Docs', 'Suporte por E-mail'],
+          cta: 'Obter Básico',
+          highlight: false
+        },
+        {
+          name: 'Pro',
+          price: '$999',
+          period: '/ mês',
+          description: 'Para empresas em crescimento com múltiplas localizações.',
+          features: ['Usuários Ilimitados', 'Até 200 Contratos', 'Analytics Avanzado', 'Suporte Prioritário', 'Acesso API'],
+          cta: 'Obter Pro',
+          highlight: true
+        },
+        {
+          name: 'Pro +',
+          price: '$1,499',
+          period: '/ mês',
+          description: 'Ferramentas avançadas de compliance e automação.',
+          features: ['Tudo no Pro', 'Até 500 Contratos', 'Assistente IA', 'Logs de Auditoria', 'Integração SSO'],
+          cta: 'Obter Pro +',
+          highlight: false
+        },
+        {
+          name: 'Empresarial',
+          price: 'Sob medida',
+          period: '',
+          description: 'Para organizações globais com necessidades complexas.',
+          features: ['Contratos Ilimitados', 'Integrações Personalizadas', 'Gerente de Sucesso Dedicado', 'Garantia SLA', 'Opção On-premise'],
+          cta: 'Falar com Vendas',
+          highlight: false
+        }
+      ]
     },
     footer: {
       summary: 'Controlease é o sistema operacional para portfólios multinacionais de locação de varejo.',

@@ -9,9 +9,11 @@ export const FooterSection = () => {
     <footer className="border-t border-[color:var(--color-border)] bg-[var(--color-bg-alt)] px-6 py-16 text-sm transition-colors">
       <div className="mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-4 gap-10 mb-12">
          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-3 font-bold text-text text-lg tracking-tight mb-4">
-              <img src="/main_logo.svg" alt={footer.brand} className="h-7 w-auto" />
-              {footer.brand}
+            <div className="mb-4">
+              <div className="inline-flex items-center gap-3 bg-[color:var(--color-secondary)] px-4 py-2.5 rounded-xl font-bold text-white text-lg tracking-tight">
+                <img src="/main_logo.svg" alt={footer.brand} className="h-7 w-auto" />
+                {footer.brand}
+              </div>
             </div>
             <p className="text-text-muted leading-relaxed">
                {footer.summary}

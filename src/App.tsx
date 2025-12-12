@@ -26,12 +26,15 @@ import { CaseStudiesPage } from './pages/resources/CaseStudiesPage';
 import { StatusPage } from './pages/resources/StatusPage';
 import { AboutPage } from './pages/company/AboutPage';
 import { CareersPage } from './pages/company/CareersPage';
+import NotFoundPage from './pages/NotFoundPage';
+import { PricingPage } from './pages/pricing/PricingPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<HomePage />} />
       <Route path="partners" element={<PartnersPage />} />
+      <Route path="pricing" element={<PricingPage />} />
       <Route path="programs" element={<ProgramsPage />} />
       <Route path="impact" element={<ImpactPage />} />
       <Route path="contact" element={<ContactPage />} />
@@ -67,6 +70,7 @@ const router = createBrowserRouter(
         <Route path="about" element={<AboutPage />} />
         <Route path="careers" element={<CareersPage />} />
       </Route>
+      <Route path="*" element={<NotFoundPage />} />
     </Route>,
   ),
 );

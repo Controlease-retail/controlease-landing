@@ -1,4 +1,5 @@
 // import React from 'react';
+import { Link } from 'react-router-dom';
 import { useI18n } from '../../i18n';
 
 type CTASectionProps = {
@@ -6,13 +7,17 @@ type CTASectionProps = {
   description?: string;
   primaryCta?: string;
   secondaryCta?: string;
+  primaryHref?: string;
+  secondaryHref?: string;
 };
 
 export const CTASection = ({ 
   title,
   description,
   primaryCta,
-  secondaryCta
+  secondaryCta,
+  primaryHref,
+  secondaryHref
 }: CTASectionProps) => {
   const { t } = useI18n();
   
@@ -20,6 +25,25 @@ export const CTASection = ({
   const finalDescription = description || t('contact.description');
   const finalPrimaryCta = primaryCta || t('contact.primaryCta');
   const finalSecondaryCta = secondaryCta || t('contact.secondaryCta');
+
+  const PrimaryButton = () => (
+    <button className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary-light text-inverted-text rounded-lg font-bold transition-all shadow-lg">
+      {finalPrimaryCta}
+    </button>
+  );
+
+  const SecondaryButton = () => (
+    <button className="w-full sm:w-auto px-8 py-4 border border-[color:var(--color-border)] text-[color:var(--color-text)] rounded-lg font-semibold hover:bg-[color:var(--color-hover)] transition-colors">
+      {finalSecondaryCta}
+    </button>
+  );
+
+  const renderLink = (href: string, children: React.ReactNode) => {
+    if (href.startsWith('http') || href.startsWith('mailto:')) {
+      return <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? "noopener noreferrer" : undefined}>{children}</a>;
+    }
+    return <Link to={href}>{children}</Link>;
+  };
 
   return (
     <section id="contact" className="px-6 py-24 bg-[color:var(--color-bg)]">
@@ -36,12 +60,17 @@ export const CTASection = ({
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
-          <button className="px-8 py-4 bg-primary hover:bg-primary-light text-inverted-text rounded-lg font-bold transition-all shadow-lg">
-            {finalPrimaryCta}
-          </button>
-          <button className="px-8 py-4 border border-[color:var(--color-border)] text-[color:var(--color-text)] rounded-lg font-semibold hover:bg-[color:var(--color-hover)] transition-colors">
-            {finalSecondaryCta}
-          </button>
+          {primaryHref ? (
+            renderLink(primaryHref, <PrimaryButton />)
+          ) : (
+            <PrimaryButton />
+          )}
+          
+          {secondaryHref ? (
+            renderLink(secondaryHref, <SecondaryButton />)
+          ) : (
+            <SecondaryButton />
+          )}
         </div>
       </div>
     </section>

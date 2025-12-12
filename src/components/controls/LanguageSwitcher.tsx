@@ -1,26 +1,64 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { GlobeAltIcon, CheckIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useI18n } from '../../i18n';
 import { cn } from '../../utils/cn';
 
+type Timeout = ReturnType<typeof setTimeout>;
+
 export const LanguageSwitcher = ({ className }: { className?: string }) => {
   const { availableLocales, language, setLanguage } = useI18n();
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const timeoutRef = useRef<Timeout | null>(null);
+
+  const closeDropdown = useCallback(() => {
+    setIsOpen(false);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  }, []);
+
+  // const openDropdown = useCallback(() => {
+  //   if (timeoutRef.current) {
+  //     clearTimeout(timeoutRef.current);
+  //     timeoutRef.current = null;
+  //   }
+  //   setIsOpen(true);
+  // }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 200); // 200ms delay
+  }, []);
+
+  const handleMouseEnter = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setIsOpen(true);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+        closeDropdown();
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [closeDropdown]);
 
   return (
-    <div className="relative" ref={containerRef} onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+    <div className="relative" ref={containerRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
         className={cn(
           "inline-flex items-center justify-center rounded-full w-8 h-8 transition-all",
@@ -40,7 +78,7 @@ export const LanguageSwitcher = ({ className }: { className?: string }) => {
             initial={{ opacity: 0, y: 5, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 5, scale: 0.95 }}
-            className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-32 rounded-xl border border-[color:var(--color-glass-border)] bg-[color:var(--color-panel)] backdrop-blur-xl p-1 shadow-xl z-50"
+            className="absolute top-full right-0 mt-5 w-32 rounded-xl border border-[color:var(--color-glass-border)] bg-[color:var(--color-panel)] backdrop-blur-xl p-1 shadow-xl z-50"
           >
             {availableLocales.map((locale) => (
               <button

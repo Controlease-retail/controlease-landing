@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../utils/cn';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
@@ -7,11 +7,32 @@ import { ThemeToggle } from '../controls/ThemeToggle';
 import { LanguageSwitcher } from '../controls/LanguageSwitcher';
 import { useI18n } from '../../i18n';
 
+type Timeout = ReturnType<typeof setTimeout>;
+
 export const CommandBar = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const { dictionary } = useI18n();
   const navItems = dictionary.landing.commandBar.nav;
   const { brand, signIn, requestDemo } = dictionary.landing.commandBar;
+  const timeoutRef = useRef<Timeout | null>(null);
+
+  const clearMenuTimeout = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+  }, []);
+
+  const handleMenuEnter = useCallback((menuLabel: string) => {
+    clearMenuTimeout();
+    setActiveMenu(menuLabel);
+  }, [clearMenuTimeout]);
+
+  const handleMenuLeave = useCallback(() => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 200); // 200ms delay
+  }, []);
 
   return (
     <>
@@ -20,7 +41,10 @@ export const CommandBar = () => {
         animate={{ y: 0 }}
         className="fixed top-6 left-0 right-0 z-50 flex justify-center pointer-events-none px-4"
       >
-        <nav className="relative flex items-center justify-between rounded-2xl bg-[var(--color-secondary)] px-6 py-3 shadow-2xl pointer-events-auto transition-all duration-300 w-full max-w-6xl">
+        <nav 
+          className="relative flex items-center justify-between rounded-2xl bg-[var(--color-secondary)] px-6 py-3 shadow-2xl pointer-events-auto transition-all duration-300 w-full max-w-6xl"
+          onMouseLeave={handleMenuLeave}
+        >
            {/* Logo */}
            <Link to="/" className="flex items-center gap-3 font-bold text-white text-lg tracking-tight hover:opacity-80 transition-opacity">
              <img src="/main_logo.svg" alt={brand} className="h-8 w-auto" />
@@ -31,9 +55,9 @@ export const CommandBar = () => {
            <div className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
                 <div key={item.label} className="relative group">
-                  {item.children && item.children.length > 0 ? (
+                  {'children' in item && item.children && item.children.length > 0 ? (
                     <button
-                      onMouseEnter={() => setActiveMenu(item.label)}
+                      onMouseEnter={() => handleMenuEnter(item.label)}
                       className={cn(
                         "flex items-center gap-1 text-sm font-medium transition-colors relative py-2",
                         activeMenu === item.label ? "text-white" : "text-white/80 hover:text-white"
@@ -83,11 +107,12 @@ export const CommandBar = () => {
               initial={{ opacity: 0, y: 10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
-              onMouseLeave={() => setActiveMenu(null)}
+              onMouseEnter={clearMenuTimeout}
+              onMouseLeave={handleMenuLeave}
               className="absolute top-full mt-4 w-full max-w-3xl overflow-hidden rounded-2xl border border-[color:var(--color-glass-border)] bg-[color:var(--color-panel)] backdrop-blur-2xl p-6 shadow-2xl pointer-events-auto"
             >
                <div className="grid grid-cols-2 gap-4">
-                  {navItems.find(i => i.label === activeMenu)?.children?.map((child) => (
+                  {(navItems.find(i => i.label === activeMenu && 'children' in i) as { children?: readonly { title: string; desc: string; path?: string }[] } | undefined)?.children?.map((child) => (
                     <Link key={child.title} to={child.path || '#'} className="group cursor-pointer rounded-xl p-4 transition-colors border border-transparent hover:bg-[color:var(--color-glass)] hover:border-[color:var(--color-glass-border)] block">
                        <h4 className="font-semibold text-text group-hover:text-primary transition-colors flex items-center gap-2">
                          {child.title}

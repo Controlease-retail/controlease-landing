@@ -1,6 +1,6 @@
 import { cn } from '../../utils/cn';
 
-type StatusType = 'active' | 'warning' | 'error' | 'neutral' | 'success';
+type StatusType = 'active' | 'warning' | 'error' | 'neutral' | 'success' | 'lapsed';
 
 interface StatusBadgeProps {
   status: StatusType;
@@ -35,9 +35,14 @@ const statusConfig = {
     text: 'text-text-muted',
     dot: 'bg-text-muted',
   },
+  lapsed: {
+    bg: 'bg-accent/10',
+    text: 'text-accent',
+    dot: 'bg-accent',
+  },
 };
 
-export const StatusBadge = ({ status, children, className, pulse = false }: StatusBadgeProps) => {
+export const StatusBadge = ({ status = 'neutral', children, className, pulse = false }: StatusBadgeProps) => {
   const config = statusConfig[status];
 
   return (

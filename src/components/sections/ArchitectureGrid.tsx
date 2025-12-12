@@ -29,7 +29,7 @@ export const ArchitectureGrid = () => {
            </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[240px] gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           
           {/* Lease Intelligence (2x2) - Main Feature */}
           <div className="md:col-span-2 md:row-span-2">
@@ -37,7 +37,6 @@ export const ArchitectureGrid = () => {
               title="Lease Intelligence"
               description="Two-track rent engine, version control, audit history, and compliance tracking. Full lifecycle management with immutable audit trails."
               icon={<DocumentTextIcon className="w-6 h-6" />}
-              className="h-full"
             />
           </div>
 
@@ -47,7 +46,6 @@ export const ArchitectureGrid = () => {
               title="Portfolio Analytics"
               description="MGR evolution, expiration forecasting, sales projections, and real-time KPIs. Data-driven decision making at scale."
               icon={<ChartBarIcon className="w-6 h-6" />}
-              className="h-full"
               delay={100}
             />
           </div>
@@ -58,7 +56,6 @@ export const ArchitectureGrid = () => {
               title={modules[2]?.title || 'AI Assistant'}
               description={modules[2]?.description || 'Natural language queries, document analysis, and predictive insights.'}
               icon={<ShieldCheckIcon className="w-6 h-6" />}
-              className="h-full"
               delay={200}
             />
           </div>
@@ -69,7 +66,6 @@ export const ArchitectureGrid = () => {
               title="Document Extraction"
               description="AI-powered PDF extraction. Automatically extract 100+ fields from lease documents with structured data output."
               icon={<DocumentMagnifyingGlassIcon className="w-6 h-6" />}
-              className="h-full"
               delay={300}
             />
           </div>
@@ -80,7 +76,6 @@ export const ArchitectureGrid = () => {
               title={modules[0]?.title || 'Smart Dashboard'}
               description={modules[0]?.description || 'Visual KPIs, lease expirations, and sales forecasting at a glance.'}
               icon={<ChartBarIcon className="w-6 h-6" />}
-              className="h-full"
               delay={400}
             />
           </div>
@@ -91,7 +86,6 @@ export const ArchitectureGrid = () => {
               title="Directory & Contacts"
               description="Unified stakeholder database. Manage landlords, brands, franchisees, and consultants across all locations."
               icon={<GlobeAltIcon className="w-6 h-6" />}
-              className="h-full"
               delay={500}
             />
           </div>
@@ -102,7 +96,6 @@ export const ArchitectureGrid = () => {
               title="Automated Notifications"
               description="Never miss critical dates. Automated alerts for break options, renewals, expirations, and compliance deadlines."
               icon={<BellIcon className="w-6 h-6" />}
-              className="h-full"
               delay={600}
             />
           </div>
@@ -113,7 +106,6 @@ export const ArchitectureGrid = () => {
               title="Import & Export"
               description="Excel template-based bulk operations. Import hundreds of leases, export reports, and sync with external systems."
               icon={<ArrowDownTrayIcon className="w-6 h-6" />}
-              className="h-full"
               delay={700}
             />
           </div>
@@ -124,7 +116,6 @@ export const ArchitectureGrid = () => {
               title="Role-Based Access"
               description="Admin, Superuser, Editor, Reader roles with scope-based permissions. Institutional-grade security and governance."
               icon={<UserGroupIcon className="w-6 h-6" />}
-              className="h-full"
               delay={800}
             />
           </div>
@@ -135,7 +126,6 @@ export const ArchitectureGrid = () => {
               title="Budget Forecasting"
               description="ROI, Payback, Break-even, EBITDA calculations. Scenario-based forecasting with worst/mid/best projections."
               icon={<CalculatorIcon className="w-6 h-6" />}
-              className="h-full"
               delay={900}
             />
           </div>
