@@ -1,64 +1,41 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CheckCircleIcon, BellAlertIcon, ExclamationTriangleIcon, InformationCircleIcon } from '@heroicons/react/24/outline';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { cn } from '../../utils/cn';
+import { useI18n } from '../../i18n';
 
 export const NotificationsSection = () => {
-  const notificationItems = [
-    "Lapsed Leases",
-    "Rent Increases",
-    "Paid Rent Deviations",
-    "Break Options",
-    "Critical Dates Alerts",
-    "And Much More!",
-  ];
+  const { dictionary } = useI18n();
+  const t = dictionary.home.notifications;
 
   interface Notification {
     id: number;
     type: 'alert' | 'info' | 'warning';
     message: string;
     timestamp: string;
-    read: boolean; // Add a read property
+    read: boolean;
   }
 
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [notificationCounter, setNotificationCounter] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const generateNotification = (): Notification => {
     setNotificationCounter(prev => prev + 1);
     const types: Notification['type'][] = ['alert', 'info', 'warning'];
     const randomType = types[Math.floor(Math.random() * types.length)];
 
-    const alertMessages = [
-      'Lease expiring soon: Retail Store B',
-      'Rent deviation detected: Unit 101, building C',
-      'Break option window opening: Office Space 205',
-      'Compliance document overdue: Tenant A',
-      'Upcoming rent increase for Warehouse D',
-      'Lapsed lease alert: Kiosk E',
-    ];
-    const infoMessages = [
-      'New lease added for Commercial Unit 7',
-      'Payment received for Retail Store F',
-      'Property inspection scheduled for building G',
-      'New tenant onboarded: Cafe H',
-    ];
-    const warningMessages = [
-      'High vacancy rate in Q3 report: Office Tower 1',
-      'Potential lease default: Unit 302, building I',
-      'Maintenance request pending for 48 hours: Retail J',
-    ];
-
+    const messages = t.messages as { alert: readonly string[]; info: readonly string[]; warning: readonly string[] };
     let message = '';
     switch (randomType) {
       case 'alert':
-        message = alertMessages[Math.floor(Math.random() * alertMessages.length)];
+        message = messages.alert[Math.floor(Math.random() * messages.alert.length)];
         break;
       case 'info':
-        message = infoMessages[Math.floor(Math.random() * infoMessages.length)];
+        message = messages.info[Math.floor(Math.random() * messages.info.length)];
         break;
       case 'warning':
-        message = warningMessages[Math.floor(Math.random() * warningMessages.length)];
+        message = messages.warning[Math.floor(Math.random() * messages.warning.length)];
         break;
     }
 
@@ -70,7 +47,7 @@ export const NotificationsSection = () => {
       type: randomType,
       message,
       timestamp,
-      read: false, // Initialize as unread
+      read: false,
     };
   };
 
@@ -79,45 +56,57 @@ export const NotificationsSection = () => {
       setNotifications(prev => {
         const newNotification = generateNotification();
         const updatedNotifications = [newNotification, ...prev];
-        // Keep only the last 4 notifications to avoid overflow
-        if (updatedNotifications.length > 4) {
-          updatedNotifications.pop(); 
+        if (updatedNotifications.length > 5) {
+          updatedNotifications.pop();
         }
         return updatedNotifications;
       });
     }, 2500);
 
     return () => clearInterval(interval);
-  }, [notificationCounter]); // Add notificationCounter as a dependency
+  }, [notificationCounter]);
 
   const handleNotificationClick = (id: number) => {
-    setNotifications(prev => 
-      prev.map(notification => 
+    setNotifications(prev =>
+      prev.map(notification =>
         notification.id === id ? { ...notification, read: !notification.read } : notification
       )
     );
   };
 
+  const getIcon = (type: Notification['type']) => {
+    switch (type) {
+      case 'alert':
+        return <ExclamationTriangleIcon className="w-5 h-5 flex-shrink-0 text-warning" />;
+      case 'warning':
+        return <InformationCircleIcon className="w-5 h-5 flex-shrink-0 text-info" />;
+      default:
+        return <BellAlertIcon className="w-5 h-5 flex-shrink-0 text-accent" />;
+    }
+  };
+
+  const cardHeight = 76;
+
   return (
-    <div className="w-full max-w-6xl mx-auto p-4 md:p-0">
+    <div className="w-full max-w-6xl mx-auto px-0 md:px-0">
       <div className="flex flex-col md:flex-row gap-8 items-center">
-        
-        {/* Right: Description */}
-        <div className="w-full md:w-1/3 order-2 md:order-1 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+
+        {/* Description */}
+        <div className="w-full md:w-1/3 order-1 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
             <BellAlertIcon className="w-4 h-4" />
-            <span>Proactive Alerts</span>
+            <span>{t.badge}</span>
           </div>
           <h3 className="text-3xl font-bold text-[color:var(--color-text)]">
-            Automated Notification System
+            {t.title}
           </h3>
           <p className="text-[color:var(--color-text-muted)] text-lg">
-            Our platform keeps you informed with over 10 types of automated notification alerts, ensuring you never miss a critical event in your portfolio.
+            {t.description}
           </p>
           <ul className="space-y-2 text-[color:var(--color-text-secondary)]">
-            {notificationItems.map((item, index) => (
-              <motion.li 
-                key={item} 
+            {t.items.map((item, index) => (
+              <motion.li
+                key={item}
                 className="flex items-start gap-2"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -130,53 +119,99 @@ export const NotificationsSection = () => {
           </ul>
         </div>
 
-        {/* Left: Visual Demo (Dynamic Notifications) */}
-        <div className="w-full md:w-2/3 order-1 md:order-2 relative bg-[color:var(--color-surface)] border border-[color:var(--color-border)] rounded-xl shadow-2xl h-[400px] p-6 overflow-hidden">
-          <AnimatePresence initial={false}>
+        {/* Visual Demo */}
+        <div className="w-full md:w-2/3 order-2">
+          {/* Mobile: Simple stacked list */}
+          <div className="md:hidden space-y-3">
             {notifications.map((notification) => (
-              <motion.div
+              <div
                 key={notification.id}
-                initial={{ opacity: 0, y: -50, scale: 0.8 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, height: 0, marginBottom: 0, y: 50 }}
-                transition={{
-                  opacity: { duration: 0.2 },
-                  y: { type: "spring", stiffness: 300, damping: 30 },
-                  scale: { type: "spring", stiffness: 300, damping: 30 },
-                }}
                 className={cn(
-                  "absolute left-6 right-6 p-4 rounded-lg flex items-center gap-3 shadow-md border cursor-pointer",
-                  notification.read 
-                    ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)]" 
-                    : "border-[color:var(--color-border)] bg-[color:var(--color-surface-alt)] text-[color:var(--color-text)]"
+                  "p-3 rounded-xl flex items-start gap-3 border cursor-pointer",
+                  notification.read
+                    ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)]"
+                    : "border-[color:var(--color-border)] bg-[color:var(--color-surface-alt)] shadow-md"
                 )}
-                style={{
-                  top: `${50 + notifications.indexOf(notification) * 80}px`, // Changed stacking logic
-                  // Removed: backgroundColor, borderColor, color based on notification.type
-                  zIndex: notifications.length - notifications.indexOf(notification),
-                  transformOrigin: 'top center',
-                }}
                 onClick={() => handleNotificationClick(notification.id)}
               >
-                {
-                  // Pulse effect for unread notifications
-                  !notification.read && (
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-accent animate-ping-slow opacity-75" />
-                  )
-                }
-                {
-                  notification.type === 'alert' ? <ExclamationTriangleIcon className="w-6 h-6 flex-shrink-0 text-[color:var(--color-text-muted)]" /> :
-                  notification.type === 'warning' ? <InformationCircleIcon className="w-6 h-6 flex-shrink-0 text-[color:var(--color-text-muted)]" /> :
-                  <BellAlertIcon className="w-6 h-6 flex-shrink-0 text-[color:var(--color-text-muted)]" />
-                }
-                <div className="flex-1">
-                  <p className="font-medium text-sm">{notification.message}</p>
-                  <p className="text-xs opacity-70 mt-0.5">{notification.timestamp}</p>
+                <div className={cn(
+                  "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0",
+                  notification.type === 'alert' && "bg-warning/10",
+                  notification.type === 'warning' && "bg-info/10",
+                  notification.type === 'info' && "bg-accent/10"
+                )}>
+                  {getIcon(notification.type)}
                 </div>
-                {notification.read && <CheckCircleIcon className="w-5 h-5 text-success ml-auto" />}
+                <div className="flex-1 min-w-0">
+                  <p className="font-medium text-sm text-[color:var(--color-text)] leading-tight">
+                    {notification.message}
+                  </p>
+                  <p className="text-xs text-[color:var(--color-text-muted)] mt-1">{notification.timestamp}</p>
+                </div>
+                <div className="flex-shrink-0">
+                  {notification.read ? (
+                    <CheckCircleIcon className="w-5 h-5 text-success" />
+                  ) : (
+                    <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
+                  )}
+                </div>
+              </div>
+            ))}
+            {notifications.length === 0 && (
+              <div className="text-center py-8 text-[color:var(--color-text-muted)]">
+                <BellAlertIcon className="w-8 h-8 mx-auto mb-2 opacity-50" />
+                <p className="text-sm">{t.emptyState}</p>
+              </div>
+            )}
+          </div>
+
+          {/* Desktop: Stacked cards with smooth animation */}
+          <div ref={containerRef} className="hidden md:block relative h-[410px]">
+            {notifications.map((notification, index) => (
+              <motion.div
+                key={notification.id}
+                initial={{ y: -cardHeight, opacity: 0 }}
+                animate={{
+                  y: 16 + index * cardHeight,
+                  opacity: 1
+                }}
+                transition={{
+                  y: { type: "tween", duration: 0.4, ease: "easeOut" },
+                  opacity: { duration: 0.3 }
+                }}
+                className={cn(
+                  "absolute left-4 right-4 p-3 rounded-xl flex items-start gap-3 border cursor-pointer",
+                  notification.read
+                    ? "border-[color:var(--color-border)] bg-[color:var(--color-surface)]"
+                    : "border-[color:var(--color-border)] bg-[color:var(--color-surface-alt)] shadow-md"
+                )}
+                style={{ zIndex: 100 - index }}
+                onClick={() => handleNotificationClick(notification.id)}
+              >
+                <div className={cn(
+                  "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0",
+                  notification.type === 'alert' && "bg-warning/10",
+                  notification.type === 'warning' && "bg-info/10",
+                  notification.type === 'info' && "bg-accent/10"
+                )}>
+                  {getIcon(notification.type)}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-medium text-sm text-[color:var(--color-text)] leading-tight">
+                    {notification.message}
+                  </p>
+                  <p className="text-xs text-[color:var(--color-text-muted)] mt-1">{notification.timestamp}</p>
+                </div>
+                <div className="flex-shrink-0">
+                  {notification.read ? (
+                    <CheckCircleIcon className="w-5 h-5 text-success" />
+                  ) : (
+                    <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" />
+                  )}
+                </div>
               </motion.div>
             ))}
-          </AnimatePresence>
+          </div>
         </div>
 
       </div>

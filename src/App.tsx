@@ -12,22 +12,18 @@ import { PartnersPage } from './pages/partners/PartnersPage';
 import { ProgramsPage } from './pages/programs/ProgramsPage';
 import { PrivacyPage } from './pages/legal/PrivacyPage';
 import { TermsPage } from './pages/legal/TermsPage';
-import { SecurityPage } from './pages/legal/SecurityPage';
+import { SecurityPage as LegalSecurityPage } from './pages/legal/SecurityPage';
+import { SecurityPage } from './pages/security/SecurityPage';
 import { LeaseIntelligencePage } from './pages/platform/LeaseIntelligencePage';
 import { PortfolioAnalyticsPage } from './pages/platform/PortfolioAnalyticsPage';
 import { AIAssistantPage } from './pages/platform/AIAssistantPage';
 import { DashboardPage } from './pages/platform/DashboardPage';
 import { DirectoryPage } from './pages/platform/DirectoryPage';
-import { RetailPage } from './pages/solutions/RetailPage';
-import { CompliancePage } from './pages/solutions/CompliancePage';
-import { DocumentationPage } from './pages/resources/DocumentationPage';
-import { APIPage } from './pages/resources/APIPage';
-import { CaseStudiesPage } from './pages/resources/CaseStudiesPage';
-import { StatusPage } from './pages/resources/StatusPage';
 import { AboutPage } from './pages/company/AboutPage';
 import { CareersPage } from './pages/company/CareersPage';
 import NotFoundPage from './pages/NotFoundPage';
 import { PricingPage } from './pages/pricing/PricingPage';
+import { DataOnboardingPage } from './pages/services/DataOnboardingPage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,7 +37,13 @@ const router = createBrowserRouter(
       <Route path="privacy" element={<PrivacyPage />} />
       <Route path="terms" element={<TermsPage />} />
       <Route path="security" element={<SecurityPage />} />
-      
+      <Route path="legal/security" element={<LegalSecurityPage />} />
+
+      {/* Services nested routes */}
+      <Route path="services">
+        <Route path="data-onboarding" element={<DataOnboardingPage />} />
+      </Route>
+
       {/* Platform nested routes */}
       <Route path="platform">
         <Route path="dashboard" element={<DashboardPage />} />
@@ -50,21 +52,7 @@ const router = createBrowserRouter(
         <Route path="ai-assistant" element={<AIAssistantPage />} />
         <Route path="directory" element={<DirectoryPage />} />
       </Route>
-      
-      {/* Solutions nested routes */}
-      <Route path="solutions">
-        <Route path="retail" element={<RetailPage />} />
-        <Route path="compliance" element={<CompliancePage />} />
-      </Route>
-      
-      {/* Resources nested routes */}
-      <Route path="resources">
-        <Route path="documentation" element={<DocumentationPage />} />
-        <Route path="api" element={<APIPage />} />
-        <Route path="case-studies" element={<CaseStudiesPage />} />
-        <Route path="status" element={<StatusPage />} />
-      </Route>
-      
+
       {/* Company nested routes */}
       <Route path="company">
         <Route path="about" element={<AboutPage />} />

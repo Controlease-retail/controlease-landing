@@ -27,7 +27,7 @@ export const CTASection = ({
   const finalSecondaryCta = secondaryCta || t('contact.secondaryCta');
 
   const PrimaryButton = () => (
-    <button className="w-full sm:w-auto px-8 py-4 bg-primary hover:bg-primary-light text-inverted-text rounded-lg font-bold transition-all shadow-lg">
+    <button className="w-full sm:w-auto px-8 py-4 bg-accent hover:bg-accent-light text-white rounded-lg font-bold transition-all shadow-lg">
       {finalPrimaryCta}
     </button>
   );
@@ -46,16 +46,16 @@ export const CTASection = ({
   };
 
   return (
-    <section id="contact" className="px-6 py-24 bg-[color:var(--color-bg)]">
-      <div className="mx-auto max-w-5xl rounded-3xl border border-[color:var(--color-glass-border)] bg-[color:var(--color-glass)] p-12 text-center shadow-lg relative overflow-hidden group backdrop-blur-md">
+    <section id="contact" className="px-4 sm:px-6 py-16 sm:py-24 bg-[color:var(--color-bg)]">
+      <div className="mx-auto max-w-5xl rounded-3xl border border-[color:var(--color-glass-border)] bg-[color:var(--color-glass)] p-6 sm:p-8 md:p-12 text-center shadow-lg relative overflow-hidden group backdrop-blur-md">
       
         {/* Background Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] group-hover:bg-primary/20 transition-colors duration-700 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px] group-hover:bg-accent/20 transition-colors duration-700 pointer-events-none" />
 
-        <h2 className="text-4xl md:text-5xl font-bold text-[color:var(--color-text)] relative z-10 tracking-tight mb-6">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-[color:var(--color-text)] relative z-10 tracking-tight mb-4 sm:mb-6">
           {finalTitle}
         </h2>
-        <p className="text-xl text-[color:var(--color-text-muted)] relative z-10 max-w-2xl mx-auto mb-10">
+        <p className="text-base sm:text-xl text-[color:var(--color-text-muted)] relative z-10 max-w-2xl mx-auto mb-6 sm:mb-10">
           {finalDescription}
         </p>
         

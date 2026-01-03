@@ -83,7 +83,7 @@ export const JobApplicationModal = ({ isOpen, onClose, jobTitle }: JobApplicatio
                 id="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)] px-4 py-2 text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)]"
+                className="w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)] px-4 py-2 text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-accent"
               />
               {errors.name && <p className="mt-1 text-xs text-red-500">{errors.name}</p>}
             </div>
@@ -96,7 +96,7 @@ export const JobApplicationModal = ({ isOpen, onClose, jobTitle }: JobApplicatio
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)] px-4 py-2 text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)]"
+                className="w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)] px-4 py-2 text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-accent"
               />
               {errors.email && <p className="mt-1 text-xs text-red-500">{errors.email}</p>}
             </div>
@@ -109,7 +109,7 @@ export const JobApplicationModal = ({ isOpen, onClose, jobTitle }: JobApplicatio
                 id="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)] px-4 py-2 text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)]"
+                className="w-full rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)] px-4 py-2 text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-accent"
               />
             </div>
             <div>

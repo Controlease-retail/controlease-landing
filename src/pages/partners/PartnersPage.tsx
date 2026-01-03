@@ -52,7 +52,7 @@ export const PartnersPage = () => {
       <section className="py-24 px-6 bg-[color:var(--color-bg-alt)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h1 className="text-4xl md:text-6xl font-bold text-[color:var(--color-text)]">
+            <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[color:var(--color-text)] to-[color:var(--color-text-muted)]">
               Partner Program
             </h1>
             <p className="text-xl text-[color:var(--color-text-muted)] max-w-3xl mx-auto">
@@ -72,7 +72,7 @@ export const PartnersPage = () => {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-3xl md:text-5xl font-bold text-[color:var(--color-text)]">
+            <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[color:var(--color-text)] to-[color:var(--color-text-muted)]">
               Integration Capabilities
             </h2>
             <p className="text-xl text-[color:var(--color-text-muted)] max-w-3xl mx-auto">

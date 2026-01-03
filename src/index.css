@@ -306,4 +306,49 @@
   .mobile-gradient-overlay {
     background: linear-gradient(to top, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.6) 20%, transparent 100%);
   }
+
+  /* Feature Tour highlight */
+  .tour-highlight {
+    z-index: 52 !important;
+    animation: tour-highlight-pulse 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Only add background and border-radius for non-button elements, exclude sidebar */
+  .tour-highlight:not(button):not([class*="bg-accent"]):not([class*="rounded-full"]):not([data-tour="sidebar-nav"]) {
+    background: var(--color-surface);
+    border-radius: 8px;
+  }
+
+  /* Only set position relative if not already positioned */
+  .tour-highlight:not([class*="absolute"]):not([class*="fixed"]):not([class*="relative"]) {
+    position: relative !important;
+  }
+
+  @keyframes tour-highlight-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.01);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Pulse animation for clickable tour targets */
+  .tour-highlight-pulse-click {
+    animation: tour-click-pulse 1s ease-in-out infinite;
+  }
+
+  @keyframes tour-click-pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(242, 102, 114, 0.4);
+    }
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 0 8px rgba(242, 102, 114, 0);
+    }
+  }
 }

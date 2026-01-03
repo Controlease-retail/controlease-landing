@@ -60,7 +60,7 @@ export const JobBoard = () => {
               className={cn(
                 "px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors",
                 selectedDept === dept
-                  ? "bg-[color:var(--color-primary)] text-white"
+                  ? "bg-accent text-white"
                   : "bg-[color:var(--color-surface-muted)] text-[color:var(--color-text-muted)] hover:bg-[color:var(--color-border)]"
               )}
             >
@@ -74,7 +74,7 @@ export const JobBoard = () => {
             placeholder="Search roles..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-2 rounded-lg bg-[color:var(--color-surface-muted)] border border-[color:var(--color-border)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)] placeholder-[color:var(--color-text-muted)]"
+            className="w-full px-4 py-2 rounded-lg bg-[color:var(--color-surface-muted)] border border-[color:var(--color-border)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-accent placeholder-[color:var(--color-text-muted)]"
           />
         </div>
       </div>
@@ -90,15 +90,15 @@ export const JobBoard = () => {
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
-                className="group flex flex-col md:flex-row items-center justify-between p-6 rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] hover:border-[color:var(--color-primary)] transition-colors cursor-pointer"
+                className="group flex flex-col md:flex-row items-center justify-between p-6 rounded-xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] hover:border-accent transition-colors cursor-pointer"
               >
                 <div className="space-y-2 text-center md:text-left mb-4 md:mb-0">
-                  <h3 className="text-lg font-bold text-[color:var(--color-text)] group-hover:text-[color:var(--color-primary)] transition-colors">
+                  <h3 className="text-lg font-bold text-[color:var(--color-text)] group-hover:text-accent transition-colors">
                     {job.title}
                   </h3>
                   <div className="flex flex-wrap gap-4 justify-center md:justify-start text-sm text-[color:var(--color-text-muted)]">
                     <span className="flex items-center gap-1">
-                      <span className="w-2 h-2 rounded-full bg-[color:var(--color-primary)]" />
+                      <span className="w-2 h-2 rounded-full bg-accent" />
                       {job.department}
                     </span>
                     <span className="flex items-center gap-1">
@@ -111,9 +111,9 @@ export const JobBoard = () => {
                     </span>
                   </div>
                 </div>
-                <button 
+                <button
                   onClick={() => openModal(job.title)}
-                  className="px-6 py-2 rounded-lg border border-[color:var(--color-border)] text-[color:var(--color-text)] font-medium group-hover:bg-[color:var(--color-primary)] group-hover:text-white group-hover:border-transparent transition-all flex items-center gap-2">
+                  className="px-6 py-2 rounded-lg border border-[color:var(--color-border)] text-[color:var(--color-text)] font-medium group-hover:bg-accent group-hover:text-white group-hover:border-transparent transition-all flex items-center gap-2">
                   Apply Now
                   <ArrowRightIcon className="w-4 h-4" />
                 </button>

@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useI18n } from '../../i18n';
 
 type ContactFormProps = {
   onSubmit?: (data: { name: string; email: string; company: string; phone: string; messageType: string; message: string }) => void;
 };
 
 export const ContactForm = ({ onSubmit }: ContactFormProps) => {
+  const { dictionary } = useI18n();
+  const t = dictionary.contactPage.form.fields;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,7 +43,7 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-[color:var(--color-text)] mb-2">
-            Name *
+            {t.name} *
           </label>
           <input
             type="text"
@@ -47,12 +51,12 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)]"
+            className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-bg-alt)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-[color:var(--color-text)] mb-2">
-            Email *
+            {t.email} *
           </label>
           <input
             type="email"
@@ -60,58 +64,58 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)]"
+            className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-bg-alt)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
       </div>
-      
+
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           <label htmlFor="company" className="block text-sm font-medium text-[color:var(--color-text)] mb-2">
-            Company
+            {t.company}
           </label>
           <input
             type="text"
             id="company"
             value={formData.company}
             onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-            className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)]"
+            className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-bg-alt)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-[color:var(--color-text)] mb-2">
-            Phone
+            {t.phone}
           </label>
           <input
             type="tel"
             id="phone"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)]"
+            className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-bg-alt)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-accent"
           />
         </div>
       </div>
 
       <div>
         <label htmlFor="messageType" className="block text-sm font-medium text-[color:var(--color-text)] mb-2">
-          Inquiry Type
+          {t.inquiryType}
         </label>
         <select
           id="messageType"
           value={formData.messageType}
           onChange={(e) => setFormData({ ...formData, messageType: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)]"
+          className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-bg-alt)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-accent"
         >
-          <option value="general">General Inquiry</option>
-          <option value="sales">Sales & Demo</option>
-          <option value="support">Technical Support</option>
-          <option value="partnership">Partnership</option>
+          <option value="general">{t.options.general}</option>
+          <option value="sales">{t.options.sales}</option>
+          <option value="support">{t.options.support}</option>
+          <option value="partnership">{t.options.partnership}</option>
         </select>
       </div>
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium text-[color:var(--color-text)] mb-2">
-          Message *
+          {t.message} *
         </label>
         <textarea
           id="message"
@@ -119,15 +123,15 @@ export const ContactForm = ({ onSubmit }: ContactFormProps) => {
           rows={5}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-surface)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[color:var(--color-primary)] resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-bg-alt)] text-[color:var(--color-text)] focus:outline-none focus:ring-2 focus:ring-accent resize-none"
         />
       </div>
 
       <button
         type="submit"
-        className="w-full px-6 py-3 bg-[color:var(--color-primary)] text-[color:var(--color-inverted-text)] rounded-lg font-semibold hover:opacity-90 transition-opacity"
+        className="w-full px-6 py-3 bg-accent text-white rounded-lg font-semibold hover:opacity-90 transition-opacity"
       >
-        Send Message
+        {t.submit}
       </button>
     </motion.form>
   );

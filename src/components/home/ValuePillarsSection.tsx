@@ -23,7 +23,7 @@ export const ValuePillarsSection = () => {
   });
 
   return (
-    <section className="py-24 px-6 bg-[color:var(--color-bg)] relative z-10">
+    <section className="py-24 px-6 bg-[color:var(--color-bg-alt)] relative z-10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-xs uppercase tracking-widest text-[color:var(--color-text-muted)] mb-2">
@@ -77,13 +77,9 @@ export const ValuePillarsSection = () => {
 
                   <div className="relative z-10 flex flex-col space-y-4">
                     <div className="flex items-start justify-between">
-                      <motion.div
-                        className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:bg-accent/30 group-hover:rotate-12"
-                        whileHover={{ rotate: 360 }}
-                        transition={{ duration: 0.6 }}
-                      >
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/10 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:bg-accent/30">
                         <Icon className="h-7 w-7 text-accent" />
-                      </motion.div>
+                      </div>
                       <motion.div
                         initial={{ opacity: 0, x: -10 }}
                         whileHover={{ opacity: 1, x: 0 }}

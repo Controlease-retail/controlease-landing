@@ -15,8 +15,8 @@ export const PricingPage = () => {
     <div className="min-h-screen w-full bg-[color:var(--color-secondary)] pt-32 pb-20 px-4 sm:px-6 lg:px-8">
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-30" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl opacity-30" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl opacity-30" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl opacity-30" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto space-y-16">
@@ -25,7 +25,7 @@ export const PricingPage = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-white tracking-tight"
+            className="text-4xl md:text-5xl font-bold text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70"
           >
             {title}
           </motion.h1>
@@ -107,14 +107,14 @@ export const PricingPage = () => {
         </div>
         
         {/* Enterprise Note */}
-        <motion.div 
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
             className="text-center text-white/50 text-sm max-w-2xl mx-auto pt-8 border-t border-white/10"
         >
-            All plans include SSL security, automated backups, and 99.9% uptime guarantee. 
-            Prices are in USD. VAT may apply.
+            {/* @ts-ignore - disclaimer exists in pricing */}
+            {dictionary.pricing?.disclaimer || 'All plans include SSL security, automated backups, and 99.9% uptime guarantee. Prices are in USD. VAT may apply.'}
         </motion.div>
       </div>
     </div>

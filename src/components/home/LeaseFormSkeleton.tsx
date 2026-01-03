@@ -1,38 +1,42 @@
 import { cn } from '../../utils/cn';
 import { DocumentTextIcon, MapPinIcon, QuestionMarkCircleIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { useI18n } from '../../i18n';
 
 export const LeaseFormSkeleton = () => {
+  const { dictionary } = useI18n();
+  const t = dictionary.home.leaseOverview;
+
   return (
     <div className={cn("w-full mx-auto")}>
       <div className="bg-[color:var(--color-surface)] border border-[color:var(--color-border)] rounded-xl p-6 space-y-6">
         <div className="flex items-center gap-3 text-lg font-semibold text-text-body">
           <DocumentTextIcon className="h-6 w-6 text-primary" />
-          General Information
+          {t.sections.generalInfo}
           <QuestionMarkCircleIcon className="h-4 w-4 text-text-muted" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <FormField label="Name" value="Retail Store A" />
-          <FormField label="Surface" value="500 m²" />
-          <FormField label="Unit Number" value="L1-A01" />
-          <FormField label="Contract Code" value="CON-RA001" />
-          <FormField label="Contract Reference" placeholder="Enter contract reference..." />
-          <FormField label="Cadastral Reference" placeholder="Enter cadastral reference..." />
+          <FormField label={t.fields.name} value="Retail Store A" />
+          <FormField label={t.mobileFields.surface} value="500 m²" />
+          <FormField label={t.mobileFields.unitNumber} value="L1-A01" />
+          <FormField label={t.mobileFields.contractCode} value="CON-RA001" />
+          <FormField label={t.mobileFields.contractReference} placeholder={t.fields.enterContractRef} />
+          <FormField label={t.mobileFields.cadastralReference} placeholder={t.fields.enterCadastralRef} />
         </div>
 
         <div className="flex items-center gap-3 text-lg font-semibold text-text-body mt-8">
           <MapPinIcon className="h-6 w-6 text-primary" />
-          Location
+          {t.sections.location}
           <QuestionMarkCircleIcon className="h-4 w-4 text-text-muted" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <FormDropdownField label="Country" value="Spain" />
-          <FormDropdownField label="Region" value="Galicia" />
-          <FormDropdownField label="State / Province" value="La Coruña" />
-          <FormDropdownField label="City" value="Other" />
+          <FormDropdownField label={t.fields.country} value="Spain" />
+          <FormDropdownField label={t.mobileFields.region} value="Galicia" />
+          <FormDropdownField label={t.fields.stateProvince} value="La Coruña" />
+          <FormDropdownField label={t.fields.city} value="Other" />
           <div className="md:col-span-2">
-            <FormField label="Address" value="Pasadizo Raquel Bonilla 479, Barcelona, España" />
+            <FormField label={t.fields.address} value="Pasadizo Raquel Bonilla 479, Barcelona, España" />
           </div>
         </div>
       </div>

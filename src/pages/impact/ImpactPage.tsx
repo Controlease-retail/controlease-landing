@@ -16,7 +16,7 @@ export const ImpactPage = () => {
             <p className="text-xs uppercase tracking-widest text-[color:var(--color-text-muted)]">
               Real Results
             </p>
-            <h2 className="text-3xl md:text-5xl font-bold text-[color:var(--color-text)]">
+            <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[color:var(--color-text)] to-[color:var(--color-text-muted)]">
               Measurable Impact
             </h2>
             <p className="text-xl text-[color:var(--color-text-muted)] max-w-3xl mx-auto">

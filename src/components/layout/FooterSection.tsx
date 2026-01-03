@@ -1,9 +1,35 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useI18n } from '../../i18n';
 
 export const FooterSection = () => {
   const { dictionary } = useI18n();
   const footer = dictionary.landing.footer;
+  const navigate = useNavigate();
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
+    if (to.startsWith('/#')) {
+      e.preventDefault();
+      const hash = to.substring(1); // Remove leading /
+      const currentPath = window.location.pathname;
+
+      if (currentPath === '/') {
+        // Already on home page, just scroll
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Navigate to home then scroll
+        navigate('/');
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    }
+  };
 
   return (
     <footer className="border-t border-[color:var(--color-border)] bg-[var(--color-bg-alt)] px-6 py-16 text-sm transition-colors">
@@ -19,22 +45,26 @@ export const FooterSection = () => {
                {footer.summary}
             </p>
          </div>
-         
+
          {footer.columns.map((column) => (
            <div key={column.title}>
              <h4 className="font-semibold text-[color:var(--color-text)] mb-4">{column.title}</h4>
              <ul className="space-y-2 text-text-muted">
-               {column.links.map((link) => (
+               {column.links.map((link: { label: string; to?: string; href?: string }) => (
                  <li key={link.label}>
-                   {'to' in link ? (
-                     <NavLink to={link.to} className="hover:text-primary transition-colors">
+                   {link.to ? (
+                     <NavLink
+                       to={link.to}
+                       onClick={(e) => handleLinkClick(e, link.to!)}
+                       className="hover:text-accent transition-colors"
+                     >
                        {link.label}
                      </NavLink>
-                   ) : (
-                     <a href={link.href} className="hover:text-primary transition-colors">
+                   ) : link.href ? (
+                     <a href={link.href} className="hover:text-accent transition-colors">
                        {link.label}
                      </a>
-                   )}
+                   ) : null}
                  </li>
                ))}
              </ul>
@@ -47,11 +77,11 @@ export const FooterSection = () => {
          <div className="flex gap-6">
             {footer.legal.map((link: any) => (
               'to' in link ? (
-                <NavLink key={link.label} to={link.to} className="hover:text-[color:var(--color-text)]">
+                <NavLink key={link.label} to={link.to} className="hover:text-accent transition-colors">
                   {link.label}
                 </NavLink>
               ) : (
-                <a key={link.label} href={link.href} className="hover:text-[color:var(--color-text)]">
+                <a key={link.label} href={link.href} className="hover:text-accent transition-colors">
                   {link.label}
                 </a>
               )

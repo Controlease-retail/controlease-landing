@@ -4,7 +4,9 @@ import { HomeIcon, DocumentTextIcon, BookOpenIcon, CloudArrowUpIcon, UserIcon, B
 
 export const Sidebar = () => {
   return (
-    <div className={cn(
+    <div
+      data-tour="sidebar-nav"
+      className={cn(
       "w-16 flex-shrink-0 flex flex-col items-center justify-between py-6 rounded-xl overflow-hidden shadow-2xl mx-3 my-3",
       "bg-[#1A1625] text-white"
     )}>
@@ -16,29 +18,29 @@ export const Sidebar = () => {
 
         {/* Main Nav Items */}
         <nav className="w-full flex flex-col items-center">
-          <SidebarItem icon={<HomeIcon className="h-6 w-6" />} label="Home" />
-          <SidebarItem icon={<DocumentTextIcon className="h-6 w-6" />} label="Leases" active />
-          <SidebarItem icon={<BookOpenIcon className="h-6 w-6" />} label="Contracts" />
-          <SidebarItem icon={<CloudArrowUpIcon className="h-6 w-6" />} label="Upload" />
+          <SidebarItem icon={<HomeIcon className="h-6 w-6" />} label="Home" dataTour="sidebar-home" />
+          <SidebarItem icon={<DocumentTextIcon className="h-6 w-6" />} label="Leases" active dataTour="sidebar-leases" />
+          <SidebarItem icon={<BookOpenIcon className="h-6 w-6" />} label="Contracts" dataTour="sidebar-contracts" />
+          <SidebarItem icon={<CloudArrowUpIcon className="h-6 w-6" />} label="Upload" dataTour="sidebar-upload" />
         </nav>
       </div>
 
       {/* Bottom Nav Items */}
       <div className="flex flex-col items-center w-full">
-        <div className="text-center mb-2">
+        <div data-tour="sidebar-scope" className="text-center mb-2">
           <p className="text-[9px] font-bold text-white tracking-wider">YOUR<br/>SCOPE</p>
           <span className="inline-block px-2 py-0.5 mt-1.5 text-[8px] font-bold rounded-full bg-[#4c3a69] text-[#e0d4f5] leading-none">Superuser</span>
         </div>
-        
+
         <SidebarItem icon={<BriefcaseIcon className="h-6 w-6" />} label="Assets" />
-        
-        <div className="relative">
+
+        <div className="relative" data-tour="sidebar-alerts">
           <SidebarItem icon={<BellIcon className="h-6 w-6" />} label="Alerts" />
           <div className="absolute top-0.5 right-0.5 w-4 h-4 bg-[#FF4444] rounded-full text-[8px] flex items-center justify-center font-bold border-2 border-[#1A1625] text-white">
             2
           </div>
         </div>
-        
+
         <SidebarItem icon={<UserIcon className="h-6 w-6" />} label="Profile" />
       </div>
     </div>
@@ -49,11 +51,13 @@ interface SidebarItemProps {
   icon: React.ReactNode;
   label: string;
   active?: boolean;
+  dataTour?: string;
 }
 
-const SidebarItem = ({ icon, label, active }: SidebarItemProps) => {
+const SidebarItem = ({ icon, label, active, dataTour }: SidebarItemProps) => {
   return (
-    <button 
+    <button
+      data-tour={dataTour}
       className={cn(
         "relative flex flex-col items-center justify-center w-12 h-12 rounded-xl group transition-all duration-200",
         active

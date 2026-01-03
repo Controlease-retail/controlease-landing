@@ -90,7 +90,7 @@ export const LanguageSwitcher = ({ className }: { className?: string }) => {
                 className={cn(
                   "flex w-full items-center justify-between rounded-lg px-3 py-2 text-xs font-medium transition-colors",
                   language === locale.code
-                    ? "bg-primary/10 text-primary"
+                    ? "bg-accent/10 text-accent"
                     : "text-text-muted hover:bg-[color:var(--color-glass)] hover:text-[color:var(--color-text)]"
                 )}
               >

@@ -1,63 +1,62 @@
 import { useI18n } from '../../i18n';
 
 export const PrivacyPage = () => {
-  useI18n(); // Keep for potential future i18n usage
-  const date = new Date().toLocaleDateString();
+  const { dictionary } = useI18n();
+  const t = dictionary.legal.privacy;
+  const s = t.sections;
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
       <div className="max-w-3xl mx-auto px-6">
-        <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
-        <p className="text-[var(--color-text-muted)] mb-8">Last updated: {date}</p>
-        
+        <h1 className="text-4xl font-bold mb-4">{t.title}</h1>
+        <p className="text-[var(--color-text-muted)] mb-8">{dictionary.legal.lastUpdated}: 2025-01-01</p>
+
         <div className="prose prose-lg dark:prose-invert max-w-none space-y-8">
           <section>
-            <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
+            <h2 className="text-2xl font-semibold mb-4">{s.intro.title}</h2>
             <p className="text-[var(--color-text-muted)] leading-relaxed">
-              At Controlease, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+              {s.intro.content}
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">2. Collection of Your Information</h2>
+            <h2 className="text-2xl font-semibold mb-4">{s.collection.title}</h2>
             <p className="text-[var(--color-text-muted)] leading-relaxed mb-4">
-              We may collect information about you in a variety of ways. The information we may collect on the Site includes:
+              {s.collection.content}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-[var(--color-text-muted)]">
-              <li><strong>Personal Data:</strong> Personally identifiable information, such as your name, shipping address, email address, and telephone number, and demographic information, such as your age, gender, hometown, and interests, that you voluntarily give to us when you register with the Site or when you choose to participate in various activities related to the Site.</li>
-              <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.</li>
+              <li><strong>{s.collection.items.personal.label}:</strong> {s.collection.items.personal.content}</li>
+              <li><strong>{s.collection.items.derivative.label}:</strong> {s.collection.items.derivative.content}</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">3. Use of Your Information</h2>
+            <h2 className="text-2xl font-semibold mb-4">{s.use.title}</h2>
             <p className="text-[var(--color-text-muted)] leading-relaxed">
-              Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:
+              {s.use.content}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-[var(--color-text-muted)] mt-4">
-              <li>Create and manage your account.</li>
-              <li>Process your transactions and lease operations.</li>
-              <li>Email you regarding your account or order.</li>
-              <li>Fulfill and manage purchases, orders, payments, and other transactions related to the Site.</li>
-              <li>Generate a personal profile about you to make future visits to the Site more personalized.</li>
+              {s.use.items.map((item: string, idx: number) => (
+                <li key={idx}>{item}</li>
+              ))}
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">4. Disclosure of Your Information</h2>
+            <h2 className="text-2xl font-semibold mb-4">{s.disclosure.title}</h2>
             <p className="text-[var(--color-text-muted)] leading-relaxed">
-              We may share information we have collected about you in certain situations. Your information may be disclosed as follows:
+              {s.disclosure.content}
             </p>
             <ul className="list-disc pl-6 space-y-2 text-[var(--color-text-muted)] mt-4">
-              <li><strong>By Law or to Protect Rights:</strong> If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.</li>
-              <li><strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.</li>
+              <li><strong>{s.disclosure.items.law.label}:</strong> {s.disclosure.items.law.content}</li>
+              <li><strong>{s.disclosure.items.thirdParty.label}:</strong> {s.disclosure.items.thirdParty.content}</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">5. Contact Us</h2>
+            <h2 className="text-2xl font-semibold mb-4">{s.contact.title}</h2>
             <p className="text-[var(--color-text-muted)] leading-relaxed">
-              If you have questions or comments about this Privacy Policy, please contact us at:
+              {s.contact.content}
               <br /><br />
               Controlease Inc.<br />
               privacy@controlease.com
@@ -68,4 +67,3 @@ export const PrivacyPage = () => {
     </div>
   );
 };
-

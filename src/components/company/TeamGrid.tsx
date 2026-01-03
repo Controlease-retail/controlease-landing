@@ -22,9 +22,9 @@ export const TeamGrid = ({ members }: TeamGridProps) => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1 }}
-          className="group relative overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 text-center hover:border-[color:var(--color-primary)]/50 transition-colors flex flex-col items-center"
+          className="group relative overflow-hidden rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 text-center hover:border-accent/50 transition-colors flex flex-col items-center"
         >
-          <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full border-2 border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)] group-hover:border-[color:var(--color-primary)] transition-colors">
+          <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full border-2 border-[color:var(--color-border)] bg-[color:var(--color-surface-muted)] group-hover:border-accent transition-colors">
             {member.image ? (
               <img
                 src={member.image}
@@ -38,7 +38,7 @@ export const TeamGrid = ({ members }: TeamGridProps) => {
             )}
           </div>
           <h3 className="text-lg font-bold text-[color:var(--color-text)] max-w-[10rem] mx-auto leading-tight mb-1">{member.name}</h3>
-          <p className="text-sm font-medium text-[color:var(--color-primary)] mb-3">{member.role}</p>
+          <p className="text-sm font-medium text-accent mb-3">{member.role}</p>
           <p className="text-sm text-[color:var(--color-text-muted)] leading-relaxed mb-4">
             {member.bio}
           </p>
