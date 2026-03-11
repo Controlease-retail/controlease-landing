@@ -17,9 +17,9 @@ const translations = {
     home: {
       hero: {
         badge: 'Controlease',
-        title: 'Smart Lease Management for Real Estate Portfolios',
+        title: 'Smart Lease Management',
         description:
-          'Controlease is a SaaS platform that helps property owners, asset managers and operators manage lease contracts efficiently. Centralize your contracts, gain full visibility of your portfolio and avoid costly errors with intelligent lease management.',
+          'Controlease centralizes your contracts, gives you full portfolio visibility, and prevents costly errors. The SaaS platform for property owners, asset managers and operators.',
         primaryCta: 'Request a Demo',
         secondaryCta: 'Learn More',
         metrics: [
@@ -2562,9 +2562,9 @@ const translations = {
     home: {
       hero: {
         badge: 'Controlease',
-        title: 'Gestão Inteligente de Locações para Portfólios Imobiliários',
+        title: 'Gestão Inteligente de Locações',
         description:
-          'Controlease é uma plataforma SaaS que ajuda proprietários, gestores de ativos e operadores a gerenciar contratos de locação de forma eficiente. Centralize seus contratos, obtenha visibilidade completa do seu portfólio e evite erros custosos com gestão inteligente de locações.',
+          'Controlease centraliza seus contratos, oferece visibilidade total do portfólio e evita erros custosos. A plataforma SaaS para proprietários, gestores e operadores.',
         primaryCta: 'Solicitar Demo',
         secondaryCta: 'Saiba Mais',
         metrics: [
