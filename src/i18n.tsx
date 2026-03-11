@@ -553,7 +553,7 @@ const translations = {
         requestDemo: 'Request Demo Now',
         mobileNav: {
           home: 'Home',
-          pricing: 'Pricing',
+          dataOnboarding: 'Onboarding',
           company: 'Company',
           contact: 'Contact',
           menu: 'Menu',
@@ -1850,7 +1850,7 @@ const translations = {
         requestDemo: 'Solicitar Demo',
         mobileNav: {
           home: 'Inicio',
-          pricing: 'Precios',
+          dataOnboarding: 'Onboarding',
           company: 'Empresa',
           contact: 'Contacto',
           menu: 'Menú',
@@ -3098,7 +3098,7 @@ const translations = {
         requestDemo: 'Solicitar Demo',
         mobileNav: {
           home: 'Início',
-          pricing: 'Preços',
+          dataOnboarding: 'Onboarding',
           company: 'Empresa',
           contact: 'Contato',
           menu: 'Menu',

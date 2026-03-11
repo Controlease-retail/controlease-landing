@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '../../utils/cn';
-import { ChevronDownIcon, HomeIcon, CurrencyDollarIcon, BuildingOfficeIcon, PhoneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon, HomeIcon, DocumentArrowUpIcon, BuildingOfficeIcon, PhoneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ThemeToggle } from '../controls/ThemeToggle';
 import { LanguageSwitcher } from '../controls/LanguageSwitcher';
@@ -224,14 +224,14 @@ export const CommandBar = () => {
           </Link>
 
           <Link
-            to="/pricing"
+            to="/services/data-onboarding"
             className={cn(
               "flex flex-col items-center gap-0.5 px-2 py-1 rounded-md transition-colors",
-              location.pathname === '/pricing' ? "text-accent" : "text-white/70 hover:text-white"
+              location.pathname === '/services/data-onboarding' ? "text-accent" : "text-white/70 hover:text-white"
             )}
           >
-            <CurrencyDollarIcon className="w-[18px] h-[18px]" />
-            <span className="text-[9px] font-medium">{dictionary.landing.commandBar.mobileNav?.pricing || 'Pricing'}</span>
+            <DocumentArrowUpIcon className="w-[18px] h-[18px]" />
+            <span className="text-[9px] font-medium">{dictionary.landing.commandBar.mobileNav?.dataOnboarding || 'Onboarding'}</span>
           </Link>
 
           <Link
