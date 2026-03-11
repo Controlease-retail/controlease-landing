@@ -25,32 +25,67 @@ type ScenarioStep =
   | { type: 'wait'; duration: number }
   | { type: 'clear' };
 
+// --- Widget Props Types ---
+interface WidgetTranslations {
+  resultsFound: string;
+  leases: string;
+  location: string;
+  expiring: string;
+  avgRent: string;
+  vsMarket: string;
+  portfolioOccupancy: string;
+  vsLastQuarter: string;
+  unitsLeased: string;
+  expirationTimeline: string;
+  next12Months: string;
+  rentProjection: string;
+  worst: string;
+  expected: string;
+  best: string;
+  cagr: string;
+  extractedFromPdf: string;
+  accuracy: string;
+  breakOption: string;
+  renewalDue: string;
+  rentReview: string;
+  breakOptionDesc: string;
+  renewalDueDesc: string;
+  rentReviewDesc: string;
+  tenant: string;
+  startDate: string;
+  monthlyRent: string;
+  deposit: string;
+  section: string;
+  tenantNotice: string;
+  failureNotice: string;
+}
+
 // --- Widgets ---
 
-const ResultsListWidget = () => (
+const ResultsListWidget = ({ t }: { t: WidgetTranslations }) => (
   <div className="mt-3 bg-[color:var(--color-surface)] rounded-xl p-3 sm:p-4 border border-[color:var(--color-border)] w-full sm:max-w-sm shadow-sm">
     <div className="flex items-center justify-between mb-3">
-      <span className="text-xs font-semibold text-[color:var(--color-text-muted)] uppercase tracking-wider">Results Found</span>
-      <span className="text-sm font-bold text-accent">12 leases</span>
+      <span className="text-xs font-semibold text-[color:var(--color-text-muted)] uppercase tracking-wider">{t.resultsFound}</span>
+      <span className="text-sm font-bold text-accent">12 {t.leases}</span>
     </div>
     <div className="space-y-2">
       <div className="flex justify-between text-sm">
-        <span className="text-[color:var(--color-text-muted)]">Location</span>
+        <span className="text-[color:var(--color-text-muted)]">{t.location}</span>
         <span className="font-medium text-[color:var(--color-text)]">Madrid</span>
       </div>
       <div className="flex justify-between text-sm">
-        <span className="text-[color:var(--color-text-muted)]">Expiring</span>
+        <span className="text-[color:var(--color-text-muted)]">{t.expiring}</span>
         <span className="font-medium text-[color:var(--color-text)]">Q4 2024</span>
       </div>
     </div>
   </div>
 );
 
-const RentAnalysisWidget = () => (
+const RentAnalysisWidget = ({ t }: { t: WidgetTranslations }) => (
   <div className="mt-3 w-full sm:max-w-sm">
     <div className="flex gap-3 mb-3">
-      <MetricCard label="Avg Rent" value="€45.20" trend="+5.2%" trendUp={true} className="flex-1 bg-[color:var(--color-surface)] p-3 rounded-xl border border-[color:var(--color-border)] shadow-sm" />
-      <MetricCard label="Vs Market" value="+12%" trend="-2.1%" trendUp={false} className="flex-1 bg-[color:var(--color-surface)] p-3 rounded-xl border border-[color:var(--color-border)] shadow-sm" />
+      <MetricCard label={t.avgRent} value="€45.20" trend="+5.2%" trendUp={true} className="flex-1 bg-[color:var(--color-surface)] p-3 rounded-xl border border-[color:var(--color-border)] shadow-sm" />
+      <MetricCard label={t.vsMarket} value="+12%" trend="-2.1%" trendUp={false} className="flex-1 bg-[color:var(--color-surface)] p-3 rounded-xl border border-[color:var(--color-border)] shadow-sm" />
     </div>
     <div className="h-24 flex items-end justify-between gap-2 px-2 pt-4 bg-[color:var(--color-surface)] rounded-xl border border-[color:var(--color-border)] p-4">
       {[40, 65, 45, 80, 55, 70, 60].map((h, i) => (
@@ -67,16 +102,16 @@ const RentAnalysisWidget = () => (
   </div>
 );
 
-const DocSnippetWidget = () => (
+const DocSnippetWidget = ({ t }: { t: WidgetTranslations }) => (
   <div className="mt-3 bg-[color:var(--color-surface)] border border-[color:var(--color-border)] rounded-xl p-4 font-mono text-xs relative overflow-hidden group shadow-sm">
     <div className="absolute top-0 right-0 p-1 bg-[color:var(--color-bg-alt)] border-b border-l border-[color:var(--color-border)] rounded-bl text-[10px] text-[color:var(--color-text-muted)]">
       LEASE-MAD-001
     </div>
-    <div className="opacity-50 text-[color:var(--color-text-muted)] mb-2">...Section 14.2 Termination</div>
+    <div className="opacity-50 text-[color:var(--color-text-muted)] mb-2">{t.section}</div>
     <div className="bg-yellow-500/10 -mx-2 px-2 py-1 rounded border-l-2 border-yellow-500 text-[color:var(--color-text)] leading-relaxed">
-      The Tenant must provide written notice of non-renewal at least <span className="font-bold text-yellow-600 dark:text-yellow-500 bg-yellow-100 dark:bg-yellow-900/30 px-1 rounded">6 months prior</span> to the Renewal Date.
+      {t.tenantNotice}
     </div>
-    <div className="opacity-50 text-[color:var(--color-text-muted)] mt-2">Failure to provide such notice...</div>
+    <div className="opacity-50 text-[color:var(--color-text-muted)] mt-2">{t.failureNotice}</div>
   </div>
 );
 
@@ -95,7 +130,7 @@ const ActionCardWidget = () => (
   </div>
 );
 
-const OccupancyGaugeWidget = () => (
+const OccupancyGaugeWidget = ({ t }: { t: WidgetTranslations }) => (
   <div className="mt-3 bg-[color:var(--color-surface)] rounded-xl p-3 sm:p-4 border border-[color:var(--color-border)] w-full sm:max-w-sm flex items-center gap-3 sm:gap-5 shadow-sm">
     <div className="relative w-16 h-16 flex-shrink-0">
       <svg className="w-full h-full -rotate-90" viewBox="0 0 36 36">
@@ -118,20 +153,20 @@ const OccupancyGaugeWidget = () => (
       </div>
     </div>
     <div>
-      <div className="text-sm font-bold text-[color:var(--color-text)]">Portfolio Occupancy</div>
+      <div className="text-sm font-bold text-[color:var(--color-text)]">{t.portfolioOccupancy}</div>
       <div className="text-xs text-success font-medium flex items-center gap-1 mt-1">
-        <span>↑</span> 2% vs last quarter
+        <span>↑</span> 2% {t.vsLastQuarter}
       </div>
-      <div className="text-xs text-[color:var(--color-text-muted)] mt-1">382 / 405 Units Leased</div>
+      <div className="text-xs text-[color:var(--color-text-muted)] mt-1">382 / 405 {t.unitsLeased}</div>
     </div>
   </div>
 );
 
-const ExpirationTimelineWidget = () => (
+const ExpirationTimelineWidget = ({ t }: { t: WidgetTranslations }) => (
   <div className="mt-3 bg-[color:var(--color-surface)] rounded-xl p-3 sm:p-4 border border-[color:var(--color-border)] w-full sm:max-w-md shadow-sm">
     <div className="flex items-center justify-between mb-3">
-      <span className="text-xs font-semibold text-[color:var(--color-text-muted)] uppercase tracking-wider">Expiration Timeline</span>
-      <span className="text-xs text-[color:var(--color-text-muted)]">Next 12 months</span>
+      <span className="text-xs font-semibold text-[color:var(--color-text-muted)] uppercase tracking-wider">{t.expirationTimeline}</span>
+      <span className="text-xs text-[color:var(--color-text-muted)]">{t.next12Months}</span>
     </div>
     <div className="space-y-2">
       {[
@@ -163,12 +198,12 @@ const ExpirationTimelineWidget = () => (
   </div>
 );
 
-const AlertCardWidget = () => (
+const AlertCardWidget = ({ t }: { t: WidgetTranslations }) => (
   <div className="mt-3 space-y-2 w-full sm:max-w-sm">
     {[
-      { type: 'urgent', title: 'Break Option', desc: 'Store #142 Madrid - 15 days left', icon: '⚠️' },
-      { type: 'warning', title: 'Renewal Due', desc: 'Store #089 Barcelona - 30 days', icon: '📅' },
-      { type: 'info', title: 'Rent Review', desc: 'IPC adjustment pending - 3 leases', icon: '📊' },
+      { type: 'urgent', title: t.breakOption, desc: t.breakOptionDesc, icon: '⚠️' },
+      { type: 'warning', title: t.renewalDue, desc: t.renewalDueDesc, icon: '📅' },
+      { type: 'info', title: t.rentReview, desc: t.rentReviewDesc, icon: '📊' },
     ].map((alert, i) => (
       <motion.div
         key={i}
@@ -192,14 +227,14 @@ const AlertCardWidget = () => (
   </div>
 );
 
-const ScenarioChartWidget = () => (
+const ScenarioChartWidget = ({ t }: { t: WidgetTranslations }) => (
   <div className="mt-3 bg-[color:var(--color-surface)] rounded-xl p-3 sm:p-4 border border-[color:var(--color-border)] w-full sm:max-w-md shadow-sm">
     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
-      <span className="text-xs font-semibold text-[color:var(--color-text-muted)] uppercase tracking-wider">5-Year Rent Projection</span>
+      <span className="text-xs font-semibold text-[color:var(--color-text-muted)] uppercase tracking-wider">{t.rentProjection}</span>
       <div className="flex gap-3 text-[10px] text-[color:var(--color-text-muted)]">
-        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-400"></span>Worst</span>
-        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-accent"></span>Expected</span>
-        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-emerald-400"></span>Best</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-red-400"></span>{t.worst}</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-accent"></span>{t.expected}</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-emerald-400"></span>{t.best}</span>
       </div>
     </div>
     <div className="h-24 sm:h-28 flex items-end justify-between gap-1 pl-7 sm:pl-8">
@@ -236,25 +271,25 @@ const ScenarioChartWidget = () => (
       ))}
     </div>
     <div className="mt-3 pt-3 border-t border-[color:var(--color-border)] flex justify-between text-xs">
-      <span className="text-[color:var(--color-text-muted)]">Expected CAGR</span>
+      <span className="text-[color:var(--color-text-muted)]">{t.cagr}</span>
       <span className="font-semibold text-accent">+8.2%</span>
     </div>
   </div>
 );
 
-const ExtractionPreviewWidget = () => (
+const ExtractionPreviewWidget = ({ t }: { t: WidgetTranslations }) => (
   <div className="mt-3 bg-[color:var(--color-surface)] rounded-xl border border-[color:var(--color-border)] overflow-hidden w-full sm:max-w-sm shadow-sm">
     <div className="bg-[color:var(--color-bg-alt)] px-4 py-2 border-b border-[color:var(--color-border)] flex items-center justify-between">
-      <span className="text-xs font-medium text-[color:var(--color-text-muted)]">Extracted from PDF</span>
-      <span className="text-[10px] bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded-full">99% accuracy</span>
+      <span className="text-xs font-medium text-[color:var(--color-text-muted)]">{t.extractedFromPdf}</span>
+      <span className="text-[10px] bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded-full">{t.accuracy}</span>
     </div>
     <div className="p-4 space-y-2">
       {[
-        { field: 'Tenant', value: 'Retail Corp S.L.', confidence: 'high' },
-        { field: 'Start Date', value: '01/03/2024', confidence: 'high' },
-        { field: 'Monthly Rent', value: '€4,250.00', confidence: 'high' },
-        { field: 'Deposit', value: '€12,750.00', confidence: 'medium' },
-        { field: 'Break Option', value: 'Year 3, 6-month notice', confidence: 'high' },
+        { field: t.tenant, value: 'Retail Corp S.L.', confidence: 'high' },
+        { field: t.startDate, value: '01/03/2024', confidence: 'high' },
+        { field: t.monthlyRent, value: '€4,250.00', confidence: 'high' },
+        { field: t.deposit, value: '€12,750.00', confidence: 'medium' },
+        { field: t.breakOption, value: 'Year 3, 6-month notice', confidence: 'high' },
       ].map((item, i) => (
         <motion.div
           key={item.field}
@@ -282,6 +317,7 @@ const ExtractionPreviewWidget = () => (
 export const AIConsole = () => {
   const { dictionary } = useI18n();
   const t = dictionary.home.aiConsole;
+  const widgetT = dictionary.home.aiScenario.widgets as WidgetTranslations;
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
@@ -523,15 +559,15 @@ export const AIConsole = () => {
                       animate={{ opacity: 1, height: 'auto', y: 0 }}
                       transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 20 }}
                     >
-                      {msg.widget === 'results-list' && <ResultsListWidget />}
-                      {msg.widget === 'rent-analysis' && <RentAnalysisWidget />}
-                      {msg.widget === 'doc-snippet' && <DocSnippetWidget />}
+                      {msg.widget === 'results-list' && <ResultsListWidget t={widgetT} />}
+                      {msg.widget === 'rent-analysis' && <RentAnalysisWidget t={widgetT} />}
+                      {msg.widget === 'doc-snippet' && <DocSnippetWidget t={widgetT} />}
                       {msg.widget === 'action-card' && <ActionCardWidget />}
-                      {msg.widget === 'occupancy-gauge' && <OccupancyGaugeWidget />}
-                      {msg.widget === 'expiration-timeline' && <ExpirationTimelineWidget />}
-                      {msg.widget === 'alert-card' && <AlertCardWidget />}
-                      {msg.widget === 'scenario-chart' && <ScenarioChartWidget />}
-                      {msg.widget === 'extraction-preview' && <ExtractionPreviewWidget />}
+                      {msg.widget === 'occupancy-gauge' && <OccupancyGaugeWidget t={widgetT} />}
+                      {msg.widget === 'expiration-timeline' && <ExpirationTimelineWidget t={widgetT} />}
+                      {msg.widget === 'alert-card' && <AlertCardWidget t={widgetT} />}
+                      {msg.widget === 'scenario-chart' && <ScenarioChartWidget t={widgetT} />}
+                      {msg.widget === 'extraction-preview' && <ExtractionPreviewWidget t={widgetT} />}
                     </motion.div>
                   )}
                 </div>
