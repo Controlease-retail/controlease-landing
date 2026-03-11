@@ -36,7 +36,7 @@ export const LeaseFormSkeleton = () => {
           <FormDropdownField label={t.fields.stateProvince} value="La Coruña" />
           <FormDropdownField label={t.fields.city} value="Other" />
           <div className="md:col-span-2">
-            <FormField label={t.fields.address} value="Pasadizo Raquel Bonilla 479, Barcelona, España" />
+            <FormField label={t.fields.address} value="Plaza de Vigo 1, La Coruña, España" />
           </div>
         </div>
       </div>

@@ -13,12 +13,12 @@ interface Job {
 }
 
 const JOBS: Job[] = [
-  { id: '1', title: 'Senior Frontend Engineer', department: 'Engineering', location: 'Remote (US/EU)', type: 'Full-time' },
-  { id: '2', title: 'Product Manager', department: 'Product', location: 'London, UK', type: 'Full-time' },
-  { id: '3', title: 'Enterprise Account Executive', department: 'Sales', location: 'New York, NY', type: 'Full-time' },
-  { id: '4', title: 'DevOps Engineer', department: 'Engineering', location: 'Remote', type: 'Full-time' },
-  { id: '5', title: 'Customer Success Manager', department: 'Customer Success', location: 'Singapore', type: 'Full-time' },
-  { id: '6', title: 'UI/UX Designer', department: 'Product', location: 'Remote', type: 'Contract' },
+  { id: '1', title: 'Senior Frontend Engineer', department: 'Engineering', location: 'Remote (Worldwide)', type: 'Full-time' },
+  { id: '2', title: 'Product Manager', department: 'Product', location: 'Remote (Worldwide)', type: 'Full-time' },
+  { id: '3', title: 'Enterprise Account Executive', department: 'Sales', location: 'Remote (Worldwide)', type: 'Full-time' },
+  { id: '4', title: 'DevOps Engineer', department: 'Engineering', location: 'Remote (Worldwide)', type: 'Full-time' },
+  { id: '5', title: 'Customer Success Manager', department: 'Customer Success', location: 'Remote (Worldwide)', type: 'Full-time' },
+  { id: '6', title: 'UI/UX Designer', department: 'Product', location: 'Remote (Worldwide)', type: 'Contract' },
 ];
 
 const DEPARTMENTS = ['All', 'Engineering', 'Product', 'Sales', 'Customer Success'];

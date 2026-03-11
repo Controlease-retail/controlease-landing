@@ -917,7 +917,7 @@ const translations = {
     },
     about: {
       hero: {
-        badge: 'Our Story',
+        badge: '', // 'Our Story' - commented out for now
         title: 'Revolutionizing Retail Lease Management',
         description: "We're on a mission to bring transparency, automation, and intelligence to the global real estate portfolios of tomorrow."
       },
@@ -976,7 +976,7 @@ const translations = {
         remote: { title: 'Remote-First', description: 'Work from anywhere. We believe in output, not hours in a chair. We have team members across 12 timezones.' },
         equity: { title: 'Competitive Equity', description: "Every employee is an owner. We offer generous stock option packages because we're building this together." },
         health: { title: 'Comprehensive Health', description: 'Top-tier medical, dental, and vision coverage for you and your dependents. Mental health support included.' },
-        learning: { title: 'Continuous Learning', description: '$1,000 annual stipend for conferences, courses, and books. We want you to keep growing.' },
+        learning: { title: 'Continuous Learning', description: 'Access to conferences, courses, and books to support your professional growth.' },
         retreats: { title: 'Team Retreats', description: 'Twice a year, we fly the whole team to an amazing location to bond, plan, and celebrate.' },
         gear: { title: 'Latest Gear', description: 'MacBook Pro, 4K monitors, and whatever else you need to be productive. Your home office is covered.' }
       },
@@ -1320,9 +1320,9 @@ const translations = {
         primaryCta: 'Solicitar Demo',
         secondaryCta: 'Más Información',
         metrics: [
-          { label: 'Ciclo de Vida', value: 'De Punta a Punta' },
-          { label: 'Fuente de Datos', value: 'Única Verdad' },
-          { label: 'Despliegue', value: 'Nativo en Nube' },
+          { label: 'Ciclo de vida', value: 'Gestión integral' },
+          { label: 'Datos', value: 'Única fuente de verdad' },
+          { label: 'Infraestructura', value: 'Nativo en la nube' },
         ],
         problemStatement: 'La mayoría de las organizaciones aún gestionan arrendamientos en carpetas dispersas, PDFs y hojas de cálculo — lo que genera fechas límite perdidas, errores de facturación y horas desperdiciadas buscando información.',
       },
@@ -2165,7 +2165,7 @@ const translations = {
     },
     about: {
       hero: {
-        badge: 'Nuestra Historia',
+        badge: '', // 'Nuestra Historia' - commented out for now
         title: 'Revolucionando la Gestión de Arrendamientos',
         description: 'Nuestra misión es llevar transparencia, automatización e inteligencia a los portafolios inmobiliarios globales del mañana.'
       },
@@ -2224,7 +2224,7 @@ const translations = {
         remote: { title: 'Primero Remoto', description: 'Trabaja desde cualquier lugar. Creemos en los resultados, no en horas en una silla. Tenemos miembros del equipo en 12 zonas horarias.' },
         equity: { title: 'Equidad Competitiva', description: 'Cada empleado es propietario. Ofrecemos generosos paquetes de opciones sobre acciones porque construimos esto juntos.' },
         health: { title: 'Salud Integral', description: 'Cobertura médica, dental y visual de primer nivel para ti y tus dependientes. Incluye apoyo de salud mental.' },
-        learning: { title: 'Aprendizaje Continuo', description: '$1,000 anuales para conferencias, cursos y libros. Queremos que sigas creciendo.' },
+        learning: { title: 'Aprendizaje Continuo', description: 'Acceso a conferencias, cursos y libros para apoyar tu crecimiento profesional.' },
         retreats: { title: 'Retiros de Equipo', description: 'Dos veces al año, llevamos a todo el equipo a un lugar increíble para conectar, planificar y celebrar.' },
         gear: { title: 'Equipamiento de Última Generación', description: 'MacBook Pro, monitores 4K y todo lo que necesites para ser productivo. Tu oficina en casa está cubierta.' }
       },
@@ -3413,7 +3413,7 @@ const translations = {
     },
     about: {
       hero: {
-        badge: 'Nossa História',
+        badge: '', // 'Nossa História' - commented out for now
         title: 'Revolucionando a Gestão de Locações',
         description: 'Nossa missão é trazer transparência, automação e inteligência para os portfólios imobiliários globais do amanhã.'
       },
@@ -3472,7 +3472,7 @@ const translations = {
         remote: { title: 'Remoto Primeiro', description: 'Trabalhe de qualquer lugar. Acreditamos em resultados, não em horas numa cadeira. Temos membros da equipe em 12 fusos horários.' },
         equity: { title: 'Equity Competitivo', description: 'Todo funcionário é proprietário. Oferecemos generosos pacotes de opções de ações porque construímos isso juntos.' },
         health: { title: 'Saúde Completa', description: 'Cobertura médica, dental e oftalmológica de primeiro nível para você e seus dependentes. Inclui apoio à saúde mental.' },
-        learning: { title: 'Aprendizado Contínuo', description: '$1.000 anuais para conferências, cursos e livros. Queremos que você continue crescendo.' },
+        learning: { title: 'Aprendizado Contínuo', description: 'Acesso a conferências, cursos e livros para apoiar seu crescimento profissional.' },
         retreats: { title: 'Retiros de Equipe', description: 'Duas vezes ao ano, levamos toda a equipe para um lugar incrível para conectar, planejar e celebrar.' },
         gear: { title: 'Equipamento de Última Geração', description: 'MacBook Pro, monitores 4K e tudo que você precisar para ser produtivo. Seu home office está coberto.' }
       },
