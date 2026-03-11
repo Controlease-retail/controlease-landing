@@ -145,7 +145,7 @@ export const CareersPage = () => {
         primaryCta={t.cta.primaryCta}
         secondaryCta={t.cta.secondaryCta}
         primaryHref="mailto:careers@controlease.com"
-        secondaryHref="https://linkedin.com"
+        secondaryHref="https://www.linkedin.com/company/control-lease/"
       />
     </main>
   );

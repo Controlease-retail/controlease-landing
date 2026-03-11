@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useI18n } from '../../i18n';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
@@ -145,9 +146,9 @@ export const HeroSection = () => {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex min-h-screen items-center px-6 py-24">
+      <div className="relative z-10 flex min-h-screen items-center px-6 py-24 pb-32">
         <div className="max-w-7xl mx-auto w-full">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
             {/* Left column - Text content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -162,7 +163,7 @@ export const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="space-y-6"
               >
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-white drop-shadow-2xl">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-white drop-shadow-2xl">
                   {t('home.hero.title')}
                   <br />
                   <span className="block bg-gradient-to-r from-white via-accent to-primary bg-clip-text text-transparent">
@@ -174,7 +175,7 @@ export const HeroSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 }}
-                  className="max-w-xl text-lg md:text-xl leading-relaxed text-gray-200"
+                  className="max-w-xl text-base sm:text-lg md:text-xl leading-relaxed text-gray-200"
                 >
                   {t('home.hero.description')}
                 </motion.p>
@@ -187,15 +188,18 @@ export const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.9 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
+                <Link to="/contact">
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="group relative flex items-center justify-center gap-2 rounded-md border border-transparent bg-accent px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[color:var(--color-secondary)]"
+                  >
+                    {t('home.hero.primaryCta')}
+                    <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                  </motion.button>
+                </Link>
                 <motion.button
                   whileTap={{ scale: 0.95 }}
-                  className="group relative flex items-center justify-center gap-2 rounded-md border border-transparent bg-accent px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[color:var(--color-secondary)]"
-                >
-                  {t('home.hero.primaryCta')}
-                  <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </motion.button>
-                <motion.button
-                  whileTap={{ scale: 0.95 }}
+                  onClick={() => document.getElementById('value-pillars')?.scrollIntoView({ behavior: 'smooth' })}
                   className="rounded-md border-2 border-white/20 bg-white/10 px-8 py-4 text-base font-medium text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/30 transition-all"
                 >
                   {t('home.hero.secondaryCta')}
@@ -207,26 +211,26 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.1 }}
-                className="flex justify-between md:justify-start md:gap-8 pt-6 md:pt-8 border-t border-white/10"
+                className="flex justify-between sm:justify-start sm:gap-6 md:gap-8 pt-6 md:pt-8 border-t border-white/10"
               >
                 {dictionary.home.hero.metrics.map((metric: { label: string; value: string }) => (
-                  <div key={metric.label} className="flex flex-col text-center md:text-left">
-                    <span className="text-[9px] md:text-xs text-gray-400 uppercase tracking-wider mb-1">{metric.label}</span>
-                    <span className="text-base md:text-2xl font-bold text-white">{metric.value}</span>
+                  <div key={metric.label} className="flex flex-col text-center sm:text-left">
+                    <span className="text-[9px] sm:text-[10px] md:text-xs text-gray-400 uppercase tracking-wider mb-1">{metric.label}</span>
+                    <span className="text-sm sm:text-base md:text-xl lg:text-2xl font-bold text-white">{metric.value}</span>
                   </div>
                 ))}
               </motion.div>
 
             </motion.div>
 
-            {/* Right column - Layered Device Mockups (Desktop) */}
+            {/* Right column - Layered Device Mockups (Desktop & Medium screens) */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="hidden lg:flex relative items-center justify-center"
+              className="hidden md:flex relative items-center justify-center"
             >
-              <div className="relative">
+              <div className="relative scale-[0.7] md:scale-[0.65] lg:scale-[0.85] xl:scale-100 origin-center">
                 {/* Desktop - Back */}
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
@@ -283,7 +287,7 @@ export const HeroSection = () => {
                 </motion.div>
 
                 {/* Mascot - bottom right */}
-                <motion.div
+                {/* <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 1.2 }}
@@ -298,7 +302,7 @@ export const HeroSection = () => {
                     className="w-[380px] xl:w-[450px] drop-shadow-2xl"
                     ref={(el) => { if (el) el.playbackRate = 1; }}
                   />
-                </motion.div>
+                </motion.div> */}
 
                 {/* Glow */}
                 <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[400px] h-20 bg-accent/15 rounded-full blur-3xl"></div>
@@ -309,31 +313,17 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Full-width Trusted By Carousel - hidden on mobile */}
-      <div className="hidden md:block absolute bottom-0 left-0 right-0 py-6 overflow-hidden">
-        <motion.div
-          className="flex gap-12"
-          animate={{ x: ['0%', '-50%'] }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: 'loop',
-              duration: 20,
-              ease: 'linear',
-            },
-          }}
-        >
-          {[...trustedLogos, ...trustedLogos].map((logo, index) => (
-            <span
-              key={`${logo}-${index}`}
-              className="flex-shrink-0 text-lg font-semibold text-white/50 flex items-center gap-3"
-            >
-              <div className="h-8 w-8 rounded bg-white/20" />
-              {logo}
-            </span>
-          ))}
-        </motion.div>
-      </div>
+      {/* Problem Statement Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.3 }}
+        className="absolute bottom-0 left-0 right-0 py-5 px-6 bg-gradient-to-r from-white/5 via-white/10 to-white/5 border-t border-white/10 backdrop-blur-sm"
+      >
+        <p className="max-w-4xl mx-auto text-center text-sm md:text-base text-white/70 leading-relaxed">
+          {dictionary.home.hero.problemStatement}
+        </p>
+      </motion.div>
     </section>
   );
 };

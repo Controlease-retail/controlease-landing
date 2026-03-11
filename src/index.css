@@ -91,6 +91,12 @@
   --color-text-muted: #555b6e;
   --color-surface: #ffffff;
   --color-bg: #f8f9fa;
+  --color-warning: #b38600;
+  --color-warning-light: #d9a300;
+  --color-warning-dark: #8a6700;
+  --color-success: #1f7a33;
+  --color-success-light: #28a745;
+  --color-success-dark: #166325;
 }
 
 /* Dark theme adjustments */

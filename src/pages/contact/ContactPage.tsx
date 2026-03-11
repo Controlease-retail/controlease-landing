@@ -134,24 +134,29 @@ export const ContactPage = () => {
               {t.offices.title}
             </h2>
           </div>
-          <div className="grid max-w-4xl mx-auto gap-6 md:grid-cols-2">
-            {[
-              { name: t.offices.globalHq, email: 'contact@controlease.com', phone: '+1 (555) 123-4567', loc: 'New York, USA' },
-              { name: t.offices.europeanHub, email: 'eu-support@controlease.com', phone: '+44 20 7123 4567', loc: 'London, UK' }
-            ].map((office) => (
-              <article key={office.name} className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-6 shadow-lg hover:border-accent/50 transition-colors">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-bold text-[color:var(--color-text)]">{office.name}</h3>
-                  <StatusBadge status="neutral">{office.loc}</StatusBadge>
+          <div className="max-w-xl mx-auto">
+            <article className="rounded-2xl border border-[color:var(--color-border)] bg-[color:var(--color-surface)] p-8 shadow-lg hover:border-accent/50 transition-colors">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-bold text-[color:var(--color-text)]">{t.offices.globalHq}</h3>
+                <StatusBadge status="neutral">Madrid, Spain</StatusBadge>
+              </div>
+              <div className="space-y-4">
+                <p className="text-[color:var(--color-text-muted)]">
+                  Paseo de la Castellana 194<br />
+                  Chamartín, Madrid, España
+                </p>
+                <div className="pt-4 border-t border-[color:var(--color-border)] space-y-3">
+                  <a href="mailto:info@controlease.net" className="flex items-center gap-3 text-[color:var(--color-text-muted)] hover:text-accent transition-colors">
+                    <EnvelopeIcon className="w-5 h-5" />
+                    <span>info@controlease.net</span>
+                  </a>
+                  <a href="tel:+34606262798" className="flex items-center gap-3 text-[color:var(--color-text-muted)] hover:text-accent transition-colors">
+                    <PhoneIcon className="w-5 h-5" />
+                    <span>+34 606 262 798</span>
+                  </a>
                 </div>
-                <p className="text-sm text-[color:var(--color-text-muted)] mb-2 flex items-center gap-2">
-                  <span className="font-semibold">Email:</span> {office.email}
-                </p>
-                <p className="text-sm text-[color:var(--color-text-muted)] flex items-center gap-2">
-                  <span className="font-semibold">Phone:</span> {office.phone}
-                </p>
-              </article>
-            ))}
+              </div>
+            </article>
           </div>
         </div>
       </section>

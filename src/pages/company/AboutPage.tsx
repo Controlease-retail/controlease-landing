@@ -40,7 +40,7 @@ export const AboutPage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 border-y border-[color:var(--color-border)] bg-[color:var(--color-surface)]/50 backdrop-blur-sm">
+      {/* <section className="py-12 border-y border-[color:var(--color-border)] bg-[color:var(--color-surface)]/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
             { label: t.stats.leasesManaged, value: '150k+' },
@@ -54,10 +54,10 @@ export const AboutPage = () => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Mission & Values */}
-      <section className="py-24 px-6">
+      <section className="py-24 px-6 bg-[color:var(--color-bg-alt)]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.values.title}</h2>
@@ -91,7 +91,7 @@ export const AboutPage = () => {
       </section>
 
       {/* Timeline */}
-      <section className="py-24 px-6 bg-[color:var(--color-bg-alt)]">
+      {/* <section className="py-24 px-6 bg-[color:var(--color-bg-alt)]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.journey.title}</h2>
@@ -107,7 +107,7 @@ export const AboutPage = () => {
             ]}
           />
         </div>
-      </section>
+      </section> */}
 
       {/* Team */}
       <section className="py-24 px-6">

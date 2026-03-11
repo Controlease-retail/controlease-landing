@@ -17,34 +17,35 @@ const translations = {
     home: {
       hero: {
         badge: 'Controlease',
-        title: 'One platform for your entire lease portfolio.',
+        title: 'Smart Lease Management for Real Estate Portfolios',
         description:
-          'Capture, manage, and analyze all your leases in one place. Built for global teams.',
-        primaryCta: 'Start for Free',
-        secondaryCta: 'Request a demo',
+          'Controlease is a SaaS platform that helps property owners, asset managers and operators manage lease contracts efficiently. Centralize your contracts, gain full visibility of your portfolio and avoid costly errors with intelligent lease management.',
+        primaryCta: 'Request a Demo',
+        secondaryCta: 'Learn More',
         metrics: [
           { label: 'Lease Lifecycle', value: 'End-to-End' },
           { label: 'Data Source', value: 'Single Truth' },
           { label: 'Deployment', value: 'Cloud-Native' },
         ],
+        problemStatement: 'Most organizations still manage leases across scattered folders, PDFs and spreadsheets — leading to missed deadlines, billing errors and hours wasted searching for information.',
       },
       pointers: {
-        title: 'Core Value Pillars',
-        subtitle: 'Built to solve the fragmentation of retail lease management.',
+        title: 'From Lease Chaos to Total Control',
+        subtitle: '',
         items: [
           {
-            title: 'Lifecycle Coverage',
-            description: 'From draft to termination, manage every stage of your lease contracts in one place.',
-            stat: '100% Lifecycle',
+            title: 'Centralized Lease Portfolio',
+            description: 'Bring all your contracts together in a single platform. Access key information, documents and financial terms instantly for every property and tenant in your portfolio. Gain full visibility across your entire organization.',
+            stat: 'Full Visibility',
           },
           {
-            title: 'Operational Governance',
-            description: 'Role-based access, audit timelines, and strict permission controls ensure compliance.',
-            stat: 'Audit Ready',
+            title: 'Operational Control & Alerts',
+            description: 'Never miss a critical lease event again. Controlease automatically tracks key milestones such as lease expirations, break options, rent reviews and increases, and contractual obligations. Stay ahead of deadlines and avoid costly mistakes.',
+            stat: 'Automated Tracking',
           },
           {
-            title: 'Data Intelligence',
-            description: 'Real-time forecasting, AI analysis, and dashboard KPIs drive better decisions.',
+            title: 'AI-Powered Contract Intelligence',
+            description: 'Our AI reads lease agreements and extracts key contractual data automatically. Dates, financial terms, clauses and obligations become structured information you can analyze and manage. Your contracts stop being static PDFs and become operational data.',
             stat: 'AI Powered',
           },
         ],
@@ -75,10 +76,10 @@ const translations = {
         logos: ['Global Retail', 'Urban Spaces', 'Metro Properties', 'Prime Locations', 'Retail Corp', 'City Centers', 'Plaza Group', 'Market Square'],
       },
       notifications: {
-        badge: 'Proactive Alerts',
-        title: 'Automated Notification System',
-        description: 'Our platform keeps you informed with over 10 types of automated notification alerts, ensuring you never miss a critical event in your portfolio.',
-        items: ['Lapsed Leases', 'Rent Increases', 'Paid Rent Deviations', 'Break Options', 'Critical Dates Alerts', 'And Much More!'],
+        badge: 'Automated Alerts',
+        title: 'Automatic Alerts for Critical Lease Events',
+        description: 'Once your contracts are structured, Controlease automatically monitors every key milestone. You decide who receives each notification.',
+        items: ['Lease Expirations', 'Break Options', 'Rent Increases or Reviews', 'Contractual Conditions', 'Renewal Deadlines', 'And Much More!'],
         emptyState: 'Notifications will appear here...',
         messages: {
           alert: [
@@ -104,8 +105,8 @@ const translations = {
       },
       pdfExtractor: {
         badge: 'AI-Powered',
-        title: 'Instant PDF Data Extraction',
-        description: 'Upload any lease document and watch our AI extract 100+ structured fields in seconds. No manual data entry required.',
+        title: 'AI-Powered Lease Data Extraction',
+        description: 'Upload any lease document and our AI automatically extracts critical information such as tenant information, start and end dates, rent terms, deposits and guarantees, break options, and contractual obligations. No manual data entry. No risk of human error.',
         upload: {
           title: 'Drop PDF here',
           subtitle: 'or click to browse',
@@ -125,8 +126,8 @@ const translations = {
         },
       },
       aiConsole: {
-        title: 'AI Assistant',
-        description: 'Ask questions about your leases in plain English. Get instant answers and insights.',
+        title: 'AI Assistant for Lease Contracts',
+        description: 'Interact with your contracts using natural language. Our AI can analyze lease agreements, generate portfolio reports, identify key clauses and obligations, and answer questions about your portfolio. Instead of searching through documents, simply ask.',
         placeholder: 'Ask about your portfolio...',
         thinking: 'Analyzing your portfolio...',
         messages: {
@@ -148,8 +149,8 @@ const translations = {
         },
       },
       leaseOverview: {
-        title: 'Interactive Lease Management',
-        description: 'Navigate through your entire lease portfolio with our intuitive interface. Track critical dates, manage documents, and monitor financial performance.',
+        title: 'Centralized Lease Portfolio Management',
+        description: 'Manage all your lease contracts from one intuitive dashboard. Contracts are organized in clear and accessible records, allowing you to quickly access key information, documents and financial terms for every asset in your portfolio. Everything stays organized, searchable and always up to date.',
         tabs: {
           brochure: 'Brochure',
           signatories: 'Signatories',
@@ -295,9 +296,26 @@ const translations = {
         },
       },
       cta: {
-        title: 'Ready to modernize your lease operations?',
-        primaryCta: 'Start for free',
-        secondaryCta: 'Contact us',
+        title: 'Bring Control to Your Lease Portfolio',
+        description: 'Stop managing lease contracts across spreadsheets, folders and emails. Controlease centralizes your entire real estate portfolio into one intelligent platform.',
+        primaryCta: 'Request a Demo',
+        secondaryCta: 'Contact Us',
+      },
+      rentAudit: {
+        badge: 'Intelligent Audit',
+        title: 'Intelligent Rent Audit',
+        description: 'Controlease automatically verifies that what you are billed matches the conditions defined in your lease contract. The platform calculates the rent that should be paid and compares it with the amounts actually invoiced. Deviations are detected instantly.',
+        subtitle: 'This helps identify common issues such as:',
+        items: ['Incorrect rent increases', 'Wrong indexation calculations', 'Forgotten contractual conditions'],
+        conclusion: 'Instead of discovering errors during manual audits, you detect them in real time.',
+      },
+      security: {
+        badge: 'Enterprise Security',
+        title: 'Enterprise-Grade Security & Compliance',
+        description: 'Controlease operates on a secure cloud infrastructure designed to meet strict cybersecurity and compliance standards.',
+        subtitle: 'Security features include:',
+        items: ['Encrypted data storage', 'Secure communication protocols', 'Role-based access management', 'Full activity traceability', 'Automated backups'],
+        conclusion: 'Your data is protected with industry-leading security practices and continuous monitoring.',
       },
       tour: {
         steps: {
@@ -532,7 +550,7 @@ const translations = {
         brand: 'Controlease',
         tagline: 'Enterprise Lease OS',
         signIn: 'Sign In',
-        requestDemo: 'Start for Free',
+        requestDemo: 'Request Demo Now',
         mobileNav: {
           home: 'Home',
           pricing: 'Pricing',
@@ -553,17 +571,13 @@ const translations = {
               { title: 'Platform Modules', desc: 'Complete feature overview', path: '/#modules' },
             ],
           },
+          // {
+          //   label: 'Security',
+          //   path: '/security',
+          // },
           {
-            label: 'Security',
-            path: '/security',
-          },
-          {
-            label: 'Services',
-            path: '/services',
-            children: [
-              { title: 'Pricing', desc: 'Flexible plans for every portfolio', path: '/pricing' },
-              { title: 'Data Onboarding', desc: 'We digitize your existing leases', path: '/services/data-onboarding' },
-            ],
+            label: 'Data Onboarding',
+            path: '/services/data-onboarding',
           },
           {
             label: 'Company',
@@ -717,9 +731,9 @@ const translations = {
           {
             title: 'Services',
             links: [
-              { label: 'Pricing', to: '/pricing' },
+              // { label: 'Pricing', to: '/pricing' },
               { label: 'Data Onboarding', to: '/services/data-onboarding' },
-              { label: 'Security', to: '/security' },
+              // { label: 'Security', to: '/security' },
             ],
           },
           {
@@ -1195,7 +1209,7 @@ const translations = {
       },
       cta: {
         title: 'Ready to secure your lease portfolio?',
-        primary: 'Start Free Trial',
+        primary: 'Request Demo Now',
         secondary: 'Talk to Security Team',
       },
     },
@@ -1300,34 +1314,35 @@ const translations = {
     home: {
       hero: {
         badge: 'Controlease',
-        title: 'Una plataforma para toda tu cartera de arrendamientos.',
+        title: 'Gestión Inteligente de Arrendamientos',
         description:
-          'Captura, gestiona y analiza todos tus contratos en un solo lugar. Diseñado para equipos globales.',
+          'Controlease centraliza tus contratos, te da visibilidad total de tu cartera y evita errores costosos. La plataforma SaaS para propietarios, gestores y operadores.',
         primaryCta: 'Solicitar Demo',
-        secondaryCta: 'Solicitar Demo',
+        secondaryCta: 'Más Información',
         metrics: [
           { label: 'Ciclo de Vida', value: 'De Punta a Punta' },
           { label: 'Fuente de Datos', value: 'Única Verdad' },
           { label: 'Despliegue', value: 'Nativo en Nube' },
         ],
+        problemStatement: 'La mayoría de las organizaciones aún gestionan arrendamientos en carpetas dispersas, PDFs y hojas de cálculo — lo que genera fechas límite perdidas, errores de facturación y horas desperdiciadas buscando información.',
       },
       pointers: {
-        title: 'Pilares de Valor',
-        subtitle: 'Construido para resolver la fragmentación en la gestión de arrendamientos.',
+        title: 'Del Caos Contractual al Control Total',
+        subtitle: '',
         items: [
           {
-            title: 'Cobertura del Ciclo',
-            description: 'Desde el borrador hasta la terminación, gestione cada etapa en un solo lugar.',
-            stat: '100% Ciclo',
+            title: 'Cartera de Arrendamientos Centralizada',
+            description: 'Reúne todos tus contratos en una sola plataforma. Accede a información clave, documentos y términos financieros al instante para cada propiedad e inquilino de tu cartera. Obtén visibilidad completa en toda tu organización.',
+            stat: 'Visibilidad Total',
           },
           {
-            title: 'Gobernanza Operativa',
-            description: 'Acceso basado en roles, líneas de tiempo de auditoría y controles estrictos.',
-            stat: 'Auditable',
+            title: 'Control Operativo y Alertas',
+            description: 'Nunca más pierdas un evento crítico de arrendamiento. Controlease rastrea automáticamente hitos clave como vencimientos de contratos, opciones de salida, revisiones e incrementos de renta, y obligaciones contractuales. Adelántate a las fechas límite y evita errores costosos.',
+            stat: 'Seguimiento Automático',
           },
           {
-            title: 'Inteligencia de Datos',
-            description: 'Pronósticos en tiempo real, análisis por IA y KPIs en tableros.',
+            title: 'Inteligencia Contractual con IA',
+            description: 'Nuestra IA lee los contratos de arrendamiento y extrae datos contractuales clave automáticamente. Fechas, términos financieros, cláusulas y obligaciones se convierten en información estructurada que puedes analizar y gestionar. Tus contratos dejan de ser PDFs estáticos y se convierten en datos operativos.',
             stat: 'Impulsado por IA',
           },
         ],
@@ -1358,10 +1373,10 @@ const translations = {
         logos: ['Global Retail', 'Urban Spaces', 'Metro Properties', 'Prime Locations', 'Retail Corp', 'City Centers', 'Plaza Group', 'Market Square'],
       },
       notifications: {
-        badge: 'Alertas Proactivas',
-        title: 'Sistema de Notificaciones Automatizadas',
-        description: 'Nuestra plataforma te mantiene informado con más de 10 tipos de alertas automáticas, asegurando que nunca pierdas un evento crítico en tu portafolio.',
-        items: ['Contratos Vencidos', 'Incrementos de Renta', 'Desviaciones de Pago', 'Opciones de Salida', 'Alertas de Fechas Críticas', '¡Y Mucho Más!'],
+        badge: 'Alertas Automatizadas',
+        title: 'Alertas Automáticas para Eventos Críticos',
+        description: 'Una vez que tus contratos están estructurados, Controlease monitorea automáticamente cada hito clave. Tú decides quién recibe cada notificación.',
+        items: ['Vencimientos de Contratos', 'Opciones de Salida', 'Incrementos o Revisiones de Renta', 'Condiciones Contractuales', 'Fechas de Renovación', '¡Y Mucho Más!'],
         emptyState: 'Las notificaciones aparecerán aquí...',
         messages: {
           alert: [
@@ -1387,8 +1402,8 @@ const translations = {
       },
       pdfExtractor: {
         badge: 'Impulsado por IA',
-        title: 'Extracción Instantánea de Datos PDF',
-        description: 'Sube cualquier documento de arrendamiento y observa cómo nuestra IA extrae más de 100 campos estructurados en segundos. Sin entrada manual de datos.',
+        title: 'Extracción de Datos de Arrendamiento con IA',
+        description: 'Sube cualquier documento de arrendamiento y nuestra IA extrae automáticamente información crítica como datos del inquilino, fechas de inicio y fin, términos de renta, depósitos y garantías, opciones de salida y obligaciones contractuales. Sin entrada manual de datos. Sin riesgo de error humano.',
         upload: {
           title: 'Arrastra el PDF aquí',
           subtitle: 'o haz clic para buscar',
@@ -1408,8 +1423,8 @@ const translations = {
         },
       },
       aiConsole: {
-        title: 'Asistente IA',
-        description: 'Haz preguntas sobre tus contratos en lenguaje natural. Obtén respuestas instantáneas e insights.',
+        title: 'Asistente IA para Contratos de Arrendamiento',
+        description: 'Interactúa con tus contratos usando lenguaje natural. Nuestra IA puede analizar contratos de arrendamiento, generar informes de cartera, identificar cláusulas y obligaciones clave, y responder preguntas sobre tu portafolio. En lugar de buscar en documentos, simplemente pregunta.',
         placeholder: 'Pregunta sobre tu portafolio...',
         thinking: 'Analizando tu portafolio...',
         messages: {
@@ -1431,8 +1446,8 @@ const translations = {
         },
       },
       leaseOverview: {
-        title: 'Gestión Interactiva de Arrendamientos',
-        description: 'Navega por todo tu portafolio de arrendamientos con nuestra interfaz intuitiva. Rastrea fechas críticas, gestiona documentos y monitorea el rendimiento financiero.',
+        title: 'Gestión Centralizada de Cartera de Arrendamientos',
+        description: 'Gestiona todos tus contratos de arrendamiento desde un panel intuitivo. Los contratos están organizados en registros claros y accesibles, permitiéndote acceder rápidamente a información clave, documentos y términos financieros de cada activo en tu cartera. Todo permanece organizado, buscable y siempre actualizado.',
         tabs: {
           brochure: 'Folleto',
           signatories: 'Firmantes',
@@ -1578,9 +1593,26 @@ const translations = {
         },
       },
       cta: {
-        title: '¿Listo para modernizar tus operaciones de arrendamiento?',
-        primaryCta: 'Empezar gratis',
+        title: 'Toma el Control de tu Cartera de Arrendamientos',
+        description: 'Deja de gestionar contratos de arrendamiento en hojas de cálculo, carpetas y correos electrónicos. Controlease centraliza toda tu cartera inmobiliaria en una sola plataforma inteligente.',
+        primaryCta: 'Solicitar Demo',
         secondaryCta: 'Contáctanos',
+      },
+      rentAudit: {
+        badge: 'Auditoría Inteligente',
+        title: 'Auditoría Inteligente de Rentas',
+        description: 'Controlease verifica automáticamente que lo que te facturan coincida con las condiciones definidas en tu contrato de arrendamiento. La plataforma calcula la renta que debería pagarse y la compara con los montos realmente facturados. Las desviaciones se detectan al instante.',
+        subtitle: 'Esto ayuda a identificar problemas comunes como:',
+        items: ['Incrementos de renta incorrectos', 'Cálculos de indexación erróneos', 'Condiciones contractuales olvidadas'],
+        conclusion: 'En lugar de descubrir errores durante auditorías manuales, los detectas en tiempo real.',
+      },
+      security: {
+        badge: 'Seguridad Empresarial',
+        title: 'Seguridad y Cumplimiento de Nivel Empresarial',
+        description: 'Controlease opera en una infraestructura cloud segura diseñada para cumplir con estrictos estándares de ciberseguridad y cumplimiento normativo.',
+        subtitle: 'Las características de seguridad incluyen:',
+        items: ['Almacenamiento de datos encriptado', 'Protocolos de comunicación seguros', 'Gestión de acceso basada en roles', 'Trazabilidad completa de actividad', 'Copias de seguridad automatizadas'],
+        conclusion: 'Tus datos están protegidos con prácticas de seguridad líderes en la industria y monitoreo continuo.',
       },
       tour: {
         steps: {
@@ -1815,7 +1847,7 @@ const translations = {
         brand: 'Controlease',
         tagline: 'Sistema Operativo Empresarial',
         signIn: 'Iniciar sesión',
-        requestDemo: 'Empezar gratis',
+        requestDemo: 'Solicitar Demo',
         mobileNav: {
           home: 'Inicio',
           pricing: 'Precios',
@@ -1836,17 +1868,13 @@ const translations = {
               { title: 'Módulos', desc: 'Vista completa de funcionalidades', path: '/#modules' },
             ],
           },
+          // {
+          //   label: 'Seguridad',
+          //   path: '/security',
+          // },
           {
-            label: 'Seguridad',
-            path: '/security',
-          },
-          {
-            label: 'Servicios',
-            path: '/services',
-            children: [
-              { title: 'Precios', desc: 'Planes flexibles para cada portafolio', path: '/pricing' },
-              { title: 'Onboarding de Datos', desc: 'Digitalizamos tus contratos existentes', path: '/services/data-onboarding' },
-            ],
+            label: 'Onboarding de Datos',
+            path: '/services/data-onboarding',
           },
           {
             label: 'Compañía',
@@ -2005,9 +2033,9 @@ const translations = {
           {
             title: 'Servicios',
             links: [
-              { label: 'Precios', to: '/pricing' },
+              // { label: 'Precios', to: '/pricing' },
               { label: 'Onboarding de Datos', to: '/services/data-onboarding' },
-              { label: 'Seguridad', to: '/security' },
+              // { label: 'Seguridad', to: '/security' },
             ],
           },
           {
@@ -2494,23 +2522,23 @@ const translations = {
         ],
       },
       benefits: {
-        title: 'Por Qué Elegir Nuestro Servicio de Onboarding',
+        title: 'Ventajas de Nuestro Servicio',
         items: [
           {
-            title: 'Cero Esfuerzo Interno',
-            description: 'Tu equipo se mantiene enfocado en el negocio principal mientras nosotros manejamos la migración de datos.',
+            title: 'Sin Esfuerzo para tu Equipo',
+            description: 'Tu equipo sigue enfocado en su trabajo mientras nosotros nos encargamos de migrar los datos.',
           },
           {
-            title: 'Datos Listos para Cumplimiento',
-            description: 'Datos estructurados listos para auditorías, reportes y cumplimiento regulatorio desde el primer día.',
+            title: 'Datos Listos para Auditoría',
+            description: 'Información estructurada y lista para auditorías, reportes y cumplimiento normativo desde el día uno.',
           },
           {
-            title: 'Tiempo Rápido al Valor',
-            description: 'Comienza a usar Controlease en días, no meses. Sin proyectos de implementación largos.',
+            title: 'Resultados en Días',
+            description: 'Empieza a usar Controlease en días, no en meses. Sin proyectos de implementación interminables.',
           },
           {
-            title: 'Validación Experta',
-            description: 'Cada extracción es revisada por nuestros analistas que entienden los contratos de arrendamiento y aseguran la calidad de los datos.',
+            title: 'Revisión por Expertos',
+            description: 'Cada extracción es validada por analistas especializados en contratos de arrendamiento.',
           },
         ],
       },
@@ -2534,34 +2562,35 @@ const translations = {
     home: {
       hero: {
         badge: 'Controlease',
-        title: 'Uma plataforma para todo seu portfólio de locações.',
+        title: 'Gestão Inteligente de Locações para Portfólios Imobiliários',
         description:
-          'Capture, gerencie e analise todos os seus contratos em um só lugar. Feito para equipes globais.',
-        primaryCta: 'Começar grátis',
-        secondaryCta: 'Solicitar Demo',
+          'Controlease é uma plataforma SaaS que ajuda proprietários, gestores de ativos e operadores a gerenciar contratos de locação de forma eficiente. Centralize seus contratos, obtenha visibilidade completa do seu portfólio e evite erros custosos com gestão inteligente de locações.',
+        primaryCta: 'Solicitar Demo',
+        secondaryCta: 'Saiba Mais',
         metrics: [
           { label: 'Ciclo de Vida', value: 'Ponta a Ponta' },
           { label: 'Fonte de Dados', value: 'Verdade Única' },
           { label: 'Implantação', value: 'Nativo na Nuvem' },
         ],
+        problemStatement: 'A maioria das organizações ainda gerencia locações em pastas dispersas, PDFs e planilhas — gerando prazos perdidos, erros de cobrança e horas desperdiçadas buscando informações.',
       },
       pointers: {
-        title: 'Pilares de Valor',
-        subtitle: 'Construído para resolver a fragmentação na gestão de locações.',
+        title: 'Do Caos Contratual ao Controle Total',
+        subtitle: '',
         items: [
           {
-            title: 'Cobertura do Ciclo',
-            description: 'Do rascunho à rescisão, gerencie cada etapa em um só lugar.',
-            stat: '100% Ciclo',
+            title: 'Portfólio de Locações Centralizado',
+            description: 'Reúna todos os seus contratos em uma única plataforma. Acesse informações-chave, documentos e termos financeiros instantaneamente para cada propriedade e inquilino do seu portfólio. Obtenha visibilidade completa em toda a sua organização.',
+            stat: 'Visibilidade Total',
           },
           {
-            title: 'Governança Operacional',
-            description: 'Acesso baseado em papéis, linha do tempo de auditoria e controles rígidos.',
-            stat: 'Auditável',
+            title: 'Controle Operacional e Alertas',
+            description: 'Nunca mais perca um evento crítico de locação. Controlease rastreia automaticamente marcos importantes como vencimentos de contratos, opções de saída, revisões e aumentos de aluguel, e obrigações contratuais. Antecipe-se aos prazos e evite erros custosos.',
+            stat: 'Rastreamento Automático',
           },
           {
-            title: 'Inteligência de Dados',
-            description: 'Previsões em tempo real, análise por IA e KPIs em dashboards.',
+            title: 'Inteligência Contratual com IA',
+            description: 'Nossa IA lê os contratos de locação e extrai dados contratuais importantes automaticamente. Datas, termos financeiros, cláusulas e obrigações tornam-se informações estruturadas que você pode analisar e gerenciar. Seus contratos deixam de ser PDFs estáticos e se tornam dados operacionais.',
             stat: 'Impulsionado por IA',
           },
         ],
@@ -2592,10 +2621,10 @@ const translations = {
         logos: ['Global Retail', 'Urban Spaces', 'Metro Properties', 'Prime Locations', 'Retail Corp', 'City Centers', 'Plaza Group', 'Market Square'],
       },
       notifications: {
-        badge: 'Alertas Proativos',
-        title: 'Sistema de Notificações Automatizadas',
-        description: 'Nossa plataforma mantém você informado com mais de 10 tipos de alertas automáticos, garantindo que você nunca perca um evento crítico em seu portfólio.',
-        items: ['Contratos Vencidos', 'Aumentos de Aluguel', 'Desvios de Pagamento', 'Opções de Saída', 'Alertas de Datas Críticas', 'E Muito Mais!'],
+        badge: 'Alertas Automatizados',
+        title: 'Alertas Automáticos para Eventos Críticos',
+        description: 'Uma vez que seus contratos estão estruturados, Controlease monitora automaticamente cada marco importante. Você decide quem recebe cada notificação.',
+        items: ['Vencimentos de Contratos', 'Opções de Saída', 'Aumentos ou Revisões de Aluguel', 'Condições Contratuais', 'Prazos de Renovação', 'E Muito Mais!'],
         emptyState: 'As notificações aparecerão aqui...',
         messages: {
           alert: [
@@ -2621,8 +2650,8 @@ const translations = {
       },
       pdfExtractor: {
         badge: 'Impulsionado por IA',
-        title: 'Extração Instantânea de Dados PDF',
-        description: 'Faça upload de qualquer documento de locação e veja nossa IA extrair mais de 100 campos estruturados em segundos. Sem entrada manual de dados.',
+        title: 'Extração de Dados de Locação com IA',
+        description: 'Faça upload de qualquer documento de locação e nossa IA extrai automaticamente informações críticas como dados do inquilino, datas de início e término, termos de aluguel, depósitos e garantias, opções de saída e obrigações contratuais. Sem entrada manual de dados. Sem risco de erro humano.',
         upload: {
           title: 'Arraste o PDF aqui',
           subtitle: 'ou clique para navegar',
@@ -2642,8 +2671,8 @@ const translations = {
         },
       },
       aiConsole: {
-        title: 'Assistente IA',
-        description: 'Faça perguntas sobre seus contratos em linguagem natural. Obtenha respostas instantâneas e insights.',
+        title: 'Assistente IA para Contratos de Locação',
+        description: 'Interaja com seus contratos usando linguagem natural. Nossa IA pode analisar contratos de locação, gerar relatórios de portfólio, identificar cláusulas e obrigações importantes, e responder perguntas sobre seu portfólio. Em vez de procurar em documentos, simplesmente pergunte.',
         placeholder: 'Pergunte sobre seu portfólio...',
         thinking: 'Analisando seu portfólio...',
         messages: {
@@ -2665,8 +2694,8 @@ const translations = {
         },
       },
       leaseOverview: {
-        title: 'Gestão Interativa de Locações',
-        description: 'Navegue por todo o seu portfólio de locações com nossa interface intuitiva. Acompanhe datas críticas, gerencie documentos e monitore o desempenho financeiro.',
+        title: 'Gestão Centralizada de Portfólio de Locações',
+        description: 'Gerencie todos os seus contratos de locação a partir de um painel intuitivo. Os contratos são organizados em registros claros e acessíveis, permitindo que você acesse rapidamente informações-chave, documentos e termos financeiros de cada ativo do seu portfólio. Tudo permanece organizado, pesquisável e sempre atualizado.',
         tabs: {
           brochure: 'Folheto',
           signatories: 'Signatários',
@@ -2812,9 +2841,26 @@ const translations = {
         },
       },
       cta: {
-        title: 'Pronto para modernizar suas operações de locação?',
-        primaryCta: 'Começar grátis',
-        secondaryCta: 'Entre em contato',
+        title: 'Assuma o Controle do Seu Portfólio de Locações',
+        description: 'Pare de gerenciar contratos de locação em planilhas, pastas e e-mails. Controlease centraliza todo o seu portfólio imobiliário em uma única plataforma inteligente.',
+        primaryCta: 'Solicitar Demo',
+        secondaryCta: 'Entre em Contato',
+      },
+      rentAudit: {
+        badge: 'Auditoria Inteligente',
+        title: 'Auditoria Inteligente de Aluguéis',
+        description: 'Controlease verifica automaticamente se o que você é cobrado corresponde às condições definidas no seu contrato de locação. A plataforma calcula o aluguel que deveria ser pago e compara com os valores realmente faturados. Desvios são detectados instantaneamente.',
+        subtitle: 'Isso ajuda a identificar problemas comuns como:',
+        items: ['Aumentos de aluguel incorretos', 'Cálculos de indexação errados', 'Condições contratuais esquecidas'],
+        conclusion: 'Em vez de descobrir erros durante auditorias manuais, você os detecta em tempo real.',
+      },
+      security: {
+        badge: 'Segurança Empresarial',
+        title: 'Segurança e Conformidade de Nível Empresarial',
+        description: 'Controlease opera em uma infraestrutura de nuvem segura, projetada para atender a rigorosos padrões de cibersegurança e conformidade.',
+        subtitle: 'Os recursos de segurança incluem:',
+        items: ['Armazenamento de dados criptografado', 'Protocolos de comunicação seguros', 'Gerenciamento de acesso baseado em funções', 'Rastreabilidade completa de atividades', 'Backups automatizados'],
+        conclusion: 'Seus dados são protegidos com práticas de segurança líderes do setor e monitoramento contínuo.',
       },
       tour: {
         steps: {
@@ -3049,7 +3095,7 @@ const translations = {
         brand: 'Controlease',
         tagline: 'Sistema Operacional Empresarial',
         signIn: 'Entrar',
-        requestDemo: 'Começar grátis',
+        requestDemo: 'Solicitar Demo',
         mobileNav: {
           home: 'Início',
           pricing: 'Preços',
@@ -3070,17 +3116,13 @@ const translations = {
               { title: 'Módulos', desc: 'Visão completa de funcionalidades', path: '/#modules' },
             ],
           },
+          // {
+          //   label: 'Segurança',
+          //   path: '/security',
+          // },
           {
-            label: 'Segurança',
-            path: '/security',
-          },
-          {
-            label: 'Serviços',
-            path: '/services',
-            children: [
-              { title: 'Preços', desc: 'Planos flexíveis para cada portfólio', path: '/pricing' },
-              { title: 'Onboarding de Dados', desc: 'Digitalizamos seus contratos existentes', path: '/services/data-onboarding' },
-            ],
+            label: 'Onboarding de Dados',
+            path: '/services/data-onboarding',
           },
           {
             label: 'Empresa',
@@ -3239,9 +3281,9 @@ const translations = {
           {
             title: 'Serviços',
             links: [
-              { label: 'Preços', to: '/pricing' },
+              // { label: 'Preços', to: '/pricing' },
               { label: 'Onboarding de Dados', to: '/services/data-onboarding' },
-              { label: 'Segurança', to: '/security' },
+              // { label: 'Segurança', to: '/security' },
             ],
           },
           {

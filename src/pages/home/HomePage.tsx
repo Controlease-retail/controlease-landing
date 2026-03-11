@@ -10,6 +10,8 @@ import { CTASection } from '../../components/modules/CTASection';
 import { useI18n } from '../../i18n';
 import { NotificationsSection } from '../../components/home/NotificationsSection';
 import { InteractiveLeaseOverview } from '../../components/home/InteractiveLeaseOverview';
+import { RentAuditSection } from '../../components/home/RentAuditSection';
+import { SecuritySection } from '../../components/home/SecuritySection';
 
 export const HomePage = () => {
   const { t, dictionary } = useI18n();
@@ -53,10 +55,10 @@ export const HomePage = () => {
       >
         <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-16 space-y-4">
           <h2 className="text-2xl md:text-5xl font-bold text-[color:var(--color-text)] tracking-tight">
-            {dictionary.home.insights.items[2]?.title || "AI Assistant"}
+            {dictionary.home.aiConsole.title}
           </h2>
           <p className="text-base md:text-xl text-[color:var(--color-text-muted)]">
-            {dictionary.home.insights.items[2]?.description || "Chat with your portfolio using natural language and document analysis."}
+            {dictionary.home.aiConsole.description}
           </p>
         </div>
         <AIConsole />
@@ -67,22 +69,35 @@ export const HomePage = () => {
         <NotificationsSection />
       </section>
 
+      {/* Rent Audit */}
+      <section id="rent-audit">
+        <RentAuditSection />
+      </section>
+
+      {/* Security */}
+      <section id="security">
+        <SecuritySection />
+      </section>
+
       {/* Platform Modules Overview */}
       <section id="modules">
         <ArchitectureGrid />
       </section>
 
       {/* Partners - bg-alt */}
-      <PartnersSection
+      {/* <PartnersSection
         title={t('home.partnersPreview.title')}
         logos={dictionary.home.partnersPreview.logos}
-      />
+      /> */}
 
       {/* CTA */}
       <CTASection
         title={dictionary.home.cta.title}
+        description={dictionary.home.cta.description}
         primaryCta={dictionary.home.cta.primaryCta}
         secondaryCta={dictionary.home.cta.secondaryCta}
+        primaryHref="/contact"
+        secondaryHref="/contact"
       />
 
     </main>
