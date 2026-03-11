@@ -315,7 +315,7 @@ const ExtractionPreviewWidget = ({ t }: { t: WidgetTranslations }) => (
 // --- Main Component ---
 
 export const AIConsole = () => {
-  const { dictionary } = useI18n();
+  const { dictionary, language } = useI18n();
   const t = dictionary.home.aiConsole;
   const widgetT = dictionary.home.aiScenario.widgets as WidgetTranslations;
 
@@ -330,6 +330,24 @@ export const AIConsole = () => {
   const hasRunRef = useRef(false);
   const isUserScrolledUp = useRef(false);
   const isInView = useInView(containerRef, { once: true, amount: 0.3 });
+  const previousLanguageRef = useRef(language);
+
+  // Reset scenario when language changes
+  useEffect(() => {
+    if (previousLanguageRef.current !== language) {
+      previousLanguageRef.current = language;
+      // Reset the scenario so it can re-run with new translations
+      hasRunRef.current = false;
+      isMountedRef.current = false;
+      setMessages([]);
+      setInputValue('');
+      setIsTyping(false);
+      // Small delay then allow re-run
+      setTimeout(() => {
+        isMountedRef.current = true;
+      }, 100);
+    }
+  }, [language]);
 
   // Track if user has scrolled up
   const handleScroll = () => {
