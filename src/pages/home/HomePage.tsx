@@ -5,7 +5,7 @@ import { ValuePillarsSection } from '../../components/home/ValuePillarsSection';
 import { AIConsole } from '../../components/home/AIConsole';
 import { PDFDataExtractor } from '../../components/home/PDFDataExtractor';
 import { ArchitectureGrid } from '../../components/sections/ArchitectureGrid';
-import { PartnersSection } from '../../components/home/PartnersSection';
+// import { PartnersSection } from '../../components/home/PartnersSection';
 import { CTASection } from '../../components/modules/CTASection';
 import { useI18n } from '../../i18n';
 import { NotificationsSection } from '../../components/home/NotificationsSection';
@@ -14,7 +14,7 @@ import { RentAuditSection } from '../../components/home/RentAuditSection';
 import { SecuritySection } from '../../components/home/SecuritySection';
 
 export const HomePage = () => {
-  const { t, dictionary } = useI18n();
+  const { dictionary } = useI18n();
 
   return (
     <main className="relative min-h-screen bg-[color:var(--color-bg)] text-[color:var(--color-text)] overflow-x-hidden">

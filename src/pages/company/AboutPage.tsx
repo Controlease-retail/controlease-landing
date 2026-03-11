@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { TechCard } from '../../components/ui/TechCard';
-import { Timeline } from '../../components/company/Timeline';
+// import { Timeline } from '../../components/company/Timeline';
 import { TeamGrid } from '../../components/company/TeamGrid';
 import { CTASection } from '../../components/modules/CTASection';
 import { FlagIcon, LightBulbIcon, HeartIcon, GlobeAltIcon } from '@heroicons/react/24/outline';

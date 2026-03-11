@@ -6,9 +6,6 @@ import { ArrowRightIcon } from '@heroicons/react/24/solid';
 export const HeroSection = () => {
   const { t, dictionary } = useI18n();
 
-  // Trusted by logos from i18n
-  const trustedLogos = dictionary.home.partnersPreview.logos;
-
   // Floating particles
   const particles = Array.from({ length: 20 }, (_, i) => {
     const random1 = Math.random();
