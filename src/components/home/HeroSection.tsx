@@ -183,12 +183,12 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               >
-                <Link to="/contact">
+                <Link to="/contact" className="w-full sm:w-auto">
                   <motion.button
                     whileTap={{ scale: 0.95 }}
-                    className="group relative flex items-center justify-center gap-2 rounded-md border border-transparent bg-accent px-8 py-4 text-base font-medium text-white shadow-lg hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[color:var(--color-secondary)]"
+                    className="group relative w-full sm:w-auto flex items-center justify-center gap-2 rounded-md border border-transparent bg-accent px-8 py-3 sm:py-4 text-base font-medium text-white shadow-lg hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[color:var(--color-secondary)]"
                   >
                     {t('home.hero.primaryCta')}
                     <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -197,7 +197,7 @@ export const HeroSection = () => {
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={() => document.getElementById('value-pillars')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="rounded-md border-2 border-white/20 bg-white/10 px-8 py-4 text-base font-medium text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/30 transition-all"
+                  className="w-full sm:w-auto rounded-md border-2 border-white/20 bg-white/10 px-8 py-3 sm:py-4 text-base font-medium text-white backdrop-blur-sm hover:bg-white/20 hover:border-white/30 transition-all"
                 >
                   {t('home.hero.secondaryCta')}
                 </motion.button>
