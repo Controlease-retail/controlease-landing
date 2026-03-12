@@ -51,25 +51,9 @@ export const DataOnboardingPage = () => {
               </span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-[color:var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed mb-12">
+            <p className="text-lg sm:text-xl text-[color:var(--color-text-muted)] max-w-3xl mx-auto leading-relaxed">
               {t.hero.description}
             </p>
-
-            {/* Stats */}
-            <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-              {t.stats.map((stat: { value: string; label: string }, index: number) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="text-4xl md:text-5xl font-bold text-accent mb-2">{stat.value}</div>
-                  <div className="text-sm text-[color:var(--color-text-muted)]">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>
