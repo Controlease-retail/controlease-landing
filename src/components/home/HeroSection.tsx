@@ -208,12 +208,12 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.1 }}
-                className="grid grid-cols-3 gap-4 sm:flex sm:justify-start sm:gap-6 md:gap-8 pt-6 md:pt-8 border-t border-white/10"
+                className="grid grid-cols-3 gap-2 sm:flex sm:justify-start sm:gap-6 md:gap-8 pt-4 sm:pt-6 md:pt-8 border-t border-white/10 pb-24 sm:pb-0"
               >
                 {dictionary.home.hero.metrics.map((metric: { label: string; value: string }) => (
                   <div key={metric.label} className="flex flex-col text-center sm:text-left">
-                    <span className="text-[10px] sm:text-[10px] md:text-xs text-gray-400 uppercase tracking-wider mb-1 leading-tight">{metric.label}</span>
-                    <span className="text-xs sm:text-base md:text-xl lg:text-2xl font-bold text-white leading-tight">{metric.value}</span>
+                    <span className="text-[8px] sm:text-[10px] md:text-xs text-gray-400 uppercase tracking-wider mb-0.5 sm:mb-1 leading-tight">{metric.label}</span>
+                    <span className="text-[11px] sm:text-base md:text-xl lg:text-2xl font-bold text-white leading-tight">{metric.value}</span>
                   </div>
                 ))}
               </motion.div>
