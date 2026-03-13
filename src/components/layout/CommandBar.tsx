@@ -148,9 +148,9 @@ export const CommandBar = () => {
                  <ThemeToggle className="text-white/80 hover:text-white" />
               </div>
 
-              <Link to="/contact" className="text-sm font-medium text-white/90 hover:text-white transition-colors hidden sm:block">
+              <a href="https://app.controlease.net/login" className="text-sm font-medium text-white/90 hover:text-white transition-colors hidden sm:block">
                  {signIn}
-              </Link>
+              </a>
               <Link to="/contact" className="rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold bg-[var(--color-accent)] text-white transition hover:opacity-90 hover:shadow-lg hover:shadow-[0_0_15px_rgba(242,102,114,0.4)]">
                  {requestDemo}
               </Link>
@@ -338,13 +338,13 @@ export const CommandBar = () => {
                   >
                     {requestDemo}
                   </Link>
-                  <Link
-                    to="/contact"
+                  <a
+                    href="https://app.controlease.net/login"
                     onClick={() => setMobileMenuOpen(false)}
                     className="block w-full text-center px-4 py-2.5 rounded-lg border border-[var(--color-border)] text-[var(--color-text)] font-medium"
                   >
                     {signIn}
-                  </Link>
+                  </a>
                 </div>
               </div>
             </motion.div>
