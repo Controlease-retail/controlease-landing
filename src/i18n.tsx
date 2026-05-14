@@ -755,8 +755,9 @@ const translations = {
         legal: [
           { label: 'Privacy Policy', to: '/privacy' },
           { label: 'Terms of Service', to: '/terms' },
+          { label: 'Cookies', to: '/cookies' },
         ],
-        rights: '© 2025 Controlease Inc. All rights reserved.',
+        rights: '© 2025 Controlease. All rights reserved.',
       },
     },
     partners: {
@@ -1019,7 +1020,8 @@ const translations = {
             general: 'General Inquiry',
             sales: 'Sales & Demo',
             support: 'Technical Support',
-            partnership: 'Partnership'
+            partnership: 'Partnership',
+            careers: 'Open Positions'
           }
         },
         success: {
@@ -1047,72 +1049,61 @@ const translations = {
     },
     legal: {
       lastUpdated: 'Last updated',
+      date: '7 May 2026',
       privacy: {
         title: 'Privacy Policy',
-        sections: {
-          intro: {
-            title: '1. Introduction',
-            content: 'At Controlease, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.'
-          },
-          collection: {
-            title: '2. Collection of Your Information',
-            content: 'We may collect information about you in a variety of ways. The information we may collect on the Site includes:',
-            items: {
-              personal: { label: 'Personal Data', content: 'Personally identifiable information, such as your name, shipping address, email address, and telephone number, and demographic information, such as your age, gender, hometown, and interests, that you voluntarily give to us when you register with the Site or when you choose to participate in various activities related to the Site.' },
-              derivative: { label: 'Derivative Data', content: 'Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.' }
-            }
-          },
-          use: {
-            title: '3. Use of Your Information',
-            content: 'Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:',
-            items: ['Create and manage your account.', 'Process your transactions and lease operations.', 'Email you regarding your account or order.', 'Fulfill and manage purchases, orders, payments, and other transactions related to the Site.', 'Generate a personal profile about you to make future visits to the Site more personalized.']
-          },
-          disclosure: {
-            title: '4. Disclosure of Your Information',
-            content: 'We may share information we have collected about you in certain situations. Your information may be disclosed as follows:',
-            items: {
-              law: { label: 'By Law or to Protect Rights', content: 'If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.' },
-              thirdParty: { label: 'Third-Party Service Providers', content: 'We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.' }
-            }
-          },
-          contact: {
-            title: '5. Contact Us',
-            content: 'If you have questions or comments about this Privacy Policy, please contact us at:'
-          }
-        }
+        sections: [
+          { title: '1. Data Controller', content: 'The data controller is CORBITAL TECH, S.L. (hereinafter, "Controlease"), with tax ID B44995389 and registered address at P\u00ba de la Castellana, 194, 28046 Madrid, Spain.\n\nContact email: support@controlease.net' },
+          { title: '2. Purpose of Processing', content: 'Personal data is processed for the following purposes:', items: ['Managing inquiries and contact requests', 'Providing the Controlease SaaS service, including storage and management of lease contract data', 'Administrative and contractual management, including billing and payments', 'Technical support and service improvement'] },
+          { title: '3. Legal Basis', content: 'Processing is based on:', items: ['Performance of a contract', 'Legitimate interest (service improvement and support)', 'User consent (where applicable)'] },
+          { title: '4. Categories of Data', content: 'We process:', items: ['Identification data (name, email, phone)', 'Professional data (company, role)', 'Data included in lease agreements (including personal data of individuals)'], extra: 'We do not process special categories of personal data.' },
+          { title: '5. Data Recipients', content: 'We use third-party providers acting as data processors, including:', items: ['Google', 'Stripe', 'HubSpot', 'GitHub'], extra: 'We may also use artificial intelligence tools as part of the service.' },
+          { title: '6. International Transfers', content: 'Some providers may involve international data transfers outside the European Economic Area. Such transfers are carried out with appropriate safeguards under GDPR.' },
+          { title: '7. Data Retention', content: 'Data is retained:', items: ['During the contractual relationship', 'As required by law', 'Until deletion is requested (where applicable)'] },
+          { title: '8. User Rights', content: 'Users may exercise:', items: ['Access', 'Rectification', 'Erasure', 'Restriction', 'Portability', 'Objection'], extra: 'Requests can be sent to: privacy@controlease.com\n\nUsers may also file a complaint with the Spanish Data Protection Agency.' },
+          { title: '9. Security', content: 'We implement appropriate technical and organizational measures, including:', items: ['Access control', 'Encryption', 'Backups', 'Activity logging'] },
+          { title: '10. Changes', content: 'We may update this policy to reflect legal or technical changes.' },
+        ]
       },
       terms: {
         title: 'Terms of Service',
-        sections: {
-          agreement: {
-            title: '1. Agreement to Terms',
-            content: 'These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Controlease Inc. ("we," "us" or "our"), concerning your access to and use of the Controlease website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the "Site").'
-          },
-          intellectual: {
-            title: '2. Intellectual Property Rights',
-            content: 'Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the "Content") and the trademarks, service marks, and logos contained therein (the "Marks") are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws and various other intellectual property rights.'
-          },
-          userRep: {
-            title: '3. User Representations',
-            content: 'By using the Site, you represent and warrant that:',
-            items: ['All registration information you submit will be true, accurate, current, and complete.', 'You will maintain the accuracy of such information and promptly update such registration information as necessary.', 'You have the legal capacity and you agree to comply with these Terms of Service.', 'You are not a minor in the jurisdiction in which you reside.', 'You will not access the Site through automated or non-human means, whether through a bot, script or otherwise.']
-          },
-          prohibited: {
-            title: '4. Prohibited Activities',
-            content: 'You may not access or use the Site for any purpose other than that for which we make the Site available. The Site may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us.'
-          },
-          termination: {
-            title: '5. Term and Termination',
-            content: 'These Terms of Service shall remain in full force and effect while you use the Site. WITHOUT LIMITING ANY OTHER PROVISION OF THESE TERMS OF SERVICE, WE RESERVE THE RIGHT TO, IN OUR SOLE DISCRETION AND WITHOUT NOTICE OR LIABILITY, DENY ACCESS TO AND USE OF THE SITE (INCLUDING BLOCKING CERTAIN IP ADDRESSES), TO ANY PERSON FOR ANY REASON OR FOR NO REASON, INCLUDING WITHOUT LIMITATION FOR BREACH OF ANY REPRESENTATION, WARRANTY, OR COVENANT CONTAINED IN THESE TERMS OF SERVICE OR OF ANY APPLICABLE LAW OR REGULATION.'
-          }
-        }
+        sections: [
+          { title: '1. Service Description', content: 'Controlease is a SaaS solution provided by CORBITAL TECH, S.L. for managing lease agreements and related data.' },
+          { title: '2. Access and Use', content: 'The Customer agrees to:', items: ['Use the platform in compliance with applicable laws', 'Not upload unlawful or unauthorized data', 'Keep access credentials confidential'] },
+          { title: '3. Subscription Model', content: 'The service is provided on a monthly or annual subscription basis, automatically renewable unless cancelled.' },
+          { title: '4. Service Availability', content: 'Controlease will use reasonable efforts to ensure service availability but does not guarantee uninterrupted access.' },
+          { title: '5. Intellectual Property', content: 'All rights related to the software remain with CORBITAL TECH, S.L.\n\nThe Customer is granted a limited, non-exclusive right to use the platform.' },
+          { title: '6. Data Processing (DPA)', content: '6.1 Roles\nThe Customer acts as Data Controller and Controlease as Data Processor.\n\n6.2 Purpose\nProcessing is limited to providing the SaaS service.\n\n6.3 Data Types\nPersonal data included in lease agreements.\n\n6.4 Access\nControlease may access data only for support and maintenance purposes.' },
+          { title: '7. Sub-processors', content: 'Controlease may use third-party providers, including:', items: ['Google', 'Stripe', 'GitHub'], extra: 'The Customer authorizes the use of these sub-processors.' },
+          { title: '8. Security', content: 'We implement appropriate security measures including:', items: ['Access control', 'Encryption', 'Backups', 'Logging'] },
+          { title: '9. Use of Artificial Intelligence', content: 'Controlease may use AI tools to enhance and automate the service.\n\nThe Customer acknowledges and accepts this as part of the service.' },
+          { title: '10. Data Subject Rights', content: 'Controlease will assist the Customer in handling data subject rights requests.' },
+          { title: '11. Data Deletion and Portability', content: 'Customers may export or request deletion of their data.\n\nUpon termination, data will be deleted or returned.' },
+          { title: '12. Liability', content: 'Controlease is not responsible for misuse of the platform by the Customer.' },
+          { title: '13. Limitation of Liability', content: 'Total liability is limited to the amount paid by the Customer in the previous 12 months.\n\nControlease shall not be liable for indirect damages, loss of profits, or reputational harm.' },
+          { title: '14. Termination', content: 'The Customer may cancel according to subscription terms.' },
+          { title: '15. Governing Law', content: 'This agreement is governed by Spanish law.\n\nJurisdiction corresponds to the courts of the Customer\'s domicile.' },
+        ]
+      },
+      cookies: {
+        title: 'Cookie Policy',
+        sections: [
+          { title: '1. What are cookies?', content: 'Cookies are small text files stored on your device when you visit a website. They allow the website to function properly, improve user experience, and collect information about usage.' },
+          { title: '2. Types of cookies used', content: 'Controlease uses the following types of cookies:', subsections: [
+            { title: 'a) Strictly necessary cookies', content: 'These cookies are essential for the website to function and cannot be disabled. They include:', items: ['Session management', 'Security and authentication', 'Basic website functionality'], extra: 'These cookies do not require user consent.' },
+            { title: 'b) Analytical and marketing cookies', content: 'Currently, Controlease does not use analytical or advertising cookies.\n\nHowever, in the future, we may implement tools such as:', items: ['Traffic analytics', 'Performance measurement', 'Marketing and advertising tracking'], extra: 'In such cases, users will be asked for prior consent.' },
+          ]},
+          { title: '3. Third-party cookies', content: 'If analytical or marketing tools are implemented, third-party providers may place cookies on users\' devices.\n\nThese providers may include:', items: ['Google', 'LinkedIn'] },
+          { title: '4. How to manage cookies', content: 'Users can configure their browser settings to:', items: ['Block cookies', 'Delete cookies', 'Receive alerts when cookies are used'], extra: 'Please note that disabling certain cookies may affect website functionality.' },
+          { title: '5. Updates', content: 'This Cookie Policy may be updated to reflect changes in legal requirements or the use of cookies on the website.' },
+        ]
       },
       securityPage: {
         title: 'Security',
         sections: {
           commitment: {
             title: '1. Our Commitment to Security',
-            content: 'At Controlease, security is not just a feature—it\'s the foundation of our platform. We understand that you trust us with your most sensitive lease portfolio data, financial metrics, and strategic plans. We employ enterprise-grade security measures to ensure your data remains confidential, integrity-protected, and available when you need it.'
+            content: 'At Controlease, security is not just a feature\u2014it\'s the foundation of our platform. We understand that you trust us with your most sensitive lease portfolio data, financial metrics, and strategic plans. We employ enterprise-grade security measures to ensure your data remains confidential, integrity-protected, and available when you need it.'
           },
           dataProtection: {
             title: '2. Data Protection',
@@ -1141,6 +1132,11 @@ const translations = {
           }
         }
       }
+    },
+    cookieBanner: {
+      text: 'We use essential cookies to ensure the proper functioning of our website.',
+      link: 'For more information, please see our Cookie Policy.',
+      accept: 'Accept',
     },
     security: {
       hero: {
@@ -2064,8 +2060,9 @@ const translations = {
         legal: [
           { label: 'Privacidad', to: '/privacy' },
           { label: 'Términos de Servicio', to: '/terms' },
+          { label: 'Cookies', to: '/cookies' },
         ],
-        rights: '© 2025 Controlease Inc. Todos los derechos reservados.',
+        rights: '© 2025 Controlease. Todos los derechos reservados.',
       },
     },
     partners: {
@@ -2274,7 +2271,8 @@ const translations = {
             general: 'Consulta general',
             sales: 'Ventas y Demo',
             support: 'Soporte técnico',
-            partnership: 'Asociación'
+            partnership: 'Asociación',
+            careers: 'Empleo'
           }
         },
         success: {
@@ -2301,101 +2299,95 @@ const translations = {
       rights: 'Todos los derechos reservados.',
     },
     legal: {
-      lastUpdated: 'Última actualización',
+      lastUpdated: '\u00daltima actualizaci\u00f3n',
+      date: '7 de mayo de 2026',
       privacy: {
-        title: 'Política de Privacidad',
-        sections: {
-          intro: {
-            title: '1. Introducción',
-            content: 'En Controlease, nos tomamos su privacidad en serio. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos su información cuando visita nuestro sitio web o utiliza nuestros servicios. Por favor lea esta política de privacidad cuidadosamente. Si no está de acuerdo con los términos de esta política de privacidad, por favor no acceda al sitio.'
-          },
-          collection: {
-            title: '2. Recopilación de Su Información',
-            content: 'Podemos recopilar información sobre usted de diversas formas. La información que podemos recopilar en el Sitio incluye:',
-            items: {
-              personal: { label: 'Datos Personales', content: 'Información de identificación personal, como su nombre, dirección de envío, dirección de correo electrónico y número de teléfono, e información demográfica, como su edad, género, ciudad de origen e intereses, que nos proporciona voluntariamente cuando se registra en el Sitio o cuando elige participar en diversas actividades relacionadas con el Sitio.' },
-              derivative: { label: 'Datos Derivados', content: 'Información que nuestros servidores recopilan automáticamente cuando accede al Sitio, como su dirección IP, tipo de navegador, sistema operativo, tiempos de acceso y las páginas que ha visto directamente antes y después de acceder al Sitio.' }
-            }
-          },
-          use: {
-            title: '3. Uso de Su Información',
-            content: 'Tener información precisa sobre usted nos permite brindarle una experiencia fluida, eficiente y personalizada. Específicamente, podemos usar la información recopilada sobre usted a través del Sitio para:',
-            items: ['Crear y administrar su cuenta.', 'Procesar sus transacciones y operaciones de arrendamiento.', 'Enviarle correos electrónicos sobre su cuenta o pedido.', 'Cumplir y gestionar compras, pedidos, pagos y otras transacciones relacionadas con el Sitio.', 'Generar un perfil personal sobre usted para hacer futuras visitas al Sitio más personalizadas.']
-          },
-          disclosure: {
-            title: '4. Divulgación de Su Información',
-            content: 'Podemos compartir información que hemos recopilado sobre usted en ciertas situaciones. Su información puede ser divulgada de la siguiente manera:',
-            items: {
-              law: { label: 'Por Ley o para Proteger Derechos', content: 'Si creemos que la divulgación de información sobre usted es necesaria para responder a un proceso legal, investigar o remediar posibles violaciones de nuestras políticas, o proteger los derechos, propiedad y seguridad de otros, podemos compartir su información según lo permita o requiera cualquier ley, norma o regulación aplicable.' },
-              thirdParty: { label: 'Proveedores de Servicios Terceros', content: 'Podemos compartir su información con terceros que realizan servicios para nosotros o en nuestro nombre, incluyendo procesamiento de pagos, análisis de datos, entrega de correo electrónico, servicios de hosting, servicio al cliente y asistencia de marketing.' }
-            }
-          },
-          contact: {
-            title: '5. Contáctenos',
-            content: 'Si tiene preguntas o comentarios sobre esta Política de Privacidad, contáctenos en:'
-          }
-        }
+        title: 'Pol\u00edtica de Privacidad',
+        sections: [
+          { title: '1. Responsable del tratamiento', content: 'El responsable del tratamiento de los datos personales es CORBITAL TECH, S.L. (en adelante, \u201cControlease\u201d), con NIF B44995389 y domicilio en P\u00ba de la Castellana, 194, 28046 Madrid (Espa\u00f1a).\n\nEmail de contacto: support@controlease.net' },
+          { title: '2. Finalidades del tratamiento', content: 'Los datos personales ser\u00e1n tratados para las siguientes finalidades:', items: ['Gesti\u00f3n de solicitudes de informaci\u00f3n: atenci\u00f3n de consultas realizadas a trav\u00e9s de la web o canales de contacto.', 'Prestaci\u00f3n del servicio SaaS Controlease: gesti\u00f3n, almacenamiento y tratamiento de datos incluidos en contratos de arrendamiento introducidos por los clientes.', 'Gesti\u00f3n administrativa y contractual: facturaci\u00f3n, cobros y gesti\u00f3n de la relaci\u00f3n comercial.', 'Soporte t\u00e9cnico y mantenimiento: resoluci\u00f3n de incidencias y mejora del servicio.'] },
+          { title: '3. Base legal del tratamiento', content: 'El tratamiento de datos se basa en:', items: ['La ejecuci\u00f3n de un contrato (prestaci\u00f3n del servicio SaaS)', 'El inter\u00e9s leg\u00edtimo (soporte, seguridad y mejora del servicio)', 'El consentimiento del usuario (cuando aplique en formularios)'] },
+          { title: '4. Tipolog\u00eda de datos tratados', content: 'Se tratan las siguientes categor\u00edas de datos:', items: ['Datos identificativos (nombre, email, tel\u00e9fono)', 'Datos profesionales (empresa, cargo)', 'Datos incluidos en contratos de arrendamiento (incluyendo datos de personas f\u00edsicas como arrendadores, representantes o personas de contacto)'], extra: 'Controlease no trata categor\u00edas especiales de datos personales.' },
+          { title: '5. Destinatarios y encargados de tratamiento', content: 'Para la prestaci\u00f3n del servicio, Controlease utiliza proveedores tecnol\u00f3gicos que pueden acceder a datos personales en calidad de encargados del tratamiento, entre ellos:', items: ['Google (infraestructura y almacenamiento en la UE)', 'Stripe (gesti\u00f3n de pagos)', 'HubSpot', 'GitHub (gesti\u00f3n del desarrollo)'], extra: 'Asimismo, Controlease podr\u00e1 utilizar herramientas de inteligencia artificial para la prestaci\u00f3n del servicio.' },
+          { title: '6. Transferencias internacionales de datos', content: 'Algunos de los proveedores utilizados pueden implicar transferencias internacionales de datos fuera del Espacio Econ\u00f3mico Europeo.\n\nEn estos casos, Controlease garantiza que dichas transferencias se realizan conforme a las garant\u00edas adecuadas establecidas en el RGPD, incluyendo cl\u00e1usulas contractuales tipo u otros mecanismos v\u00e1lidos.' },
+          { title: '7. Conservaci\u00f3n de los datos', content: 'Los datos se conservar\u00e1n:', items: ['Mientras se mantenga la relaci\u00f3n contractual', 'Durante los plazos legales exigibles', 'Hasta que el usuario solicite su supresi\u00f3n, cuando proceda'] },
+          { title: '8. Derechos de los interesados', content: 'Los usuarios pueden ejercer los siguientes derechos:', items: ['Acceso', 'Rectificaci\u00f3n', 'Supresi\u00f3n', 'Limitaci\u00f3n del tratamiento', 'Portabilidad', 'Oposici\u00f3n'], extra: 'Para ejercer estos derechos, pueden enviar una solicitud a: privacy@controlease.com\n\nAsimismo, tienen derecho a presentar una reclamaci\u00f3n ante la Agencia Espa\u00f1ola de Protecci\u00f3n de Datos.' },
+          { title: '9. Seguridad de la informaci\u00f3n', content: 'Controlease aplica medidas t\u00e9cnicas y organizativas adecuadas para garantizar la seguridad de los datos personales, incluyendo:', items: ['Control de accesos', 'Cifrado de datos', 'Copias de seguridad', 'Registro de actividad'] },
+          { title: '10. Modificaciones', content: 'Controlease se reserva el derecho a modificar la presente pol\u00edtica para adaptarla a cambios normativos o t\u00e9cnicos.' },
+        ]
       },
       terms: {
-        title: 'Términos de Servicio',
-        sections: {
-          agreement: {
-            title: '1. Acuerdo de Términos',
-            content: 'Estos Términos de Servicio constituyen un acuerdo legalmente vinculante entre usted, ya sea personalmente o en nombre de una entidad ("usted") y Controlease Inc. ("nosotros" o "nuestro"), con respecto a su acceso y uso del sitio web de Controlease, así como cualquier otra forma de medios, canal de medios, sitio web móvil o aplicación móvil relacionada, vinculada o conectada de otra manera (colectivamente, el "Sitio").'
-          },
-          intellectual: {
-            title: '2. Derechos de Propiedad Intelectual',
-            content: 'A menos que se indique lo contrario, el Sitio es nuestra propiedad exclusiva y todo el código fuente, bases de datos, funcionalidad, software, diseños de sitios web, audio, video, texto, fotografías y gráficos en el Sitio (colectivamente, el "Contenido") y las marcas comerciales, marcas de servicio y logotipos contenidos en él (las "Marcas") son propiedad nuestra o están licenciados a nosotros, y están protegidos por leyes de derechos de autor y marcas comerciales y varios otros derechos de propiedad intelectual.'
-          },
-          userRep: {
-            title: '3. Representaciones del Usuario',
-            content: 'Al usar el Sitio, usted representa y garantiza que:',
-            items: ['Toda la información de registro que envíe será verdadera, precisa, actual y completa.', 'Mantendrá la precisión de dicha información y actualizará prontamente dicha información de registro según sea necesario.', 'Tiene la capacidad legal y acepta cumplir con estos Términos de Servicio.', 'No es menor de edad en la jurisdicción en la que reside.', 'No accederá al Sitio a través de medios automatizados o no humanos, ya sea a través de un bot, script u otro medio.']
-          },
-          prohibited: {
-            title: '4. Actividades Prohibidas',
-            content: 'No puede acceder ni usar el Sitio para ningún propósito que no sea aquel para el cual ponemos el Sitio a su disposición. El Sitio no puede ser utilizado en conexión con ningún esfuerzo comercial excepto aquellos que están específicamente respaldados o aprobados por nosotros.'
-          },
-          termination: {
-            title: '5. Plazo y Terminación',
-            content: 'Estos Términos de Servicio permanecerán en pleno vigor y efecto mientras use el Sitio. SIN LIMITAR NINGUNA OTRA DISPOSICIÓN DE ESTOS TÉRMINOS DE SERVICIO, NOS RESERVAMOS EL DERECHO DE, A NUESTRA SOLA DISCRECIÓN Y SIN PREVIO AVISO NI RESPONSABILIDAD, NEGAR EL ACCESO Y USO DEL SITIO (INCLUYENDO EL BLOQUEO DE CIERTAS DIRECCIONES IP), A CUALQUIER PERSONA POR CUALQUIER RAZÓN O SIN RAZÓN, INCLUYENDO SIN LIMITACIÓN POR INCUMPLIMIENTO DE CUALQUIER REPRESENTACIÓN, GARANTÍA O PACTO CONTENIDO EN ESTOS TÉRMINOS DE SERVICIO O DE CUALQUIER LEY O REGULACIÓN APLICABLE.'
-          }
-        }
+        title: 'T\u00e9rminos y Condiciones del Servicio',
+        sections: [
+          { title: '1. Objeto del servicio', content: 'Controlease es una soluci\u00f3n SaaS proporcionada por CORBITAL TECH, S.L., destinada a la gesti\u00f3n de contratos de arrendamiento y datos asociados.' },
+          { title: '2. Acceso y uso del servicio', content: 'El Cliente accede al servicio mediante suscripci\u00f3n y se compromete a:', items: ['Utilizar la plataforma conforme a la ley', 'No introducir datos il\u00edcitos o no autorizados', 'Garantizar la confidencialidad de sus credenciales'] },
+          { title: '3. Modelo de suscripci\u00f3n', content: 'El servicio se presta bajo modalidad de suscripci\u00f3n mensual o anual, renovable autom\u00e1ticamente salvo cancelaci\u00f3n previa.' },
+          { title: '4. Disponibilidad del servicio', content: 'Controlease se compromete a realizar sus mejores esfuerzos para garantizar la disponibilidad y correcto funcionamiento del servicio, sin garantizar disponibilidad ininterrumpida.' },
+          { title: '5. Propiedad intelectual', content: 'Todos los derechos sobre el software, dise\u00f1o y tecnolog\u00eda de Controlease pertenecen a CORBITAL TECH, S.L.\n\nEl Cliente no adquiere ning\u00fan derecho de propiedad sobre la plataforma.' },
+          { title: '6. Protecci\u00f3n de datos (DPA)', content: '6.1 Roles\nEl Cliente act\u00faa como responsable del tratamiento y Controlease como encargado del tratamiento.\n\n6.2 Finalidad\nEl tratamiento tiene como finalidad la prestaci\u00f3n del servicio SaaS.\n\n6.3 Tipolog\u00eda de datos\nDatos personales incluidos en contratos de arrendamiento (identificativos, profesionales y de contacto).\n\n6.4 Acceso a datos\nControlease podr\u00e1 acceder a los datos \u00fanicamente para soporte t\u00e9cnico, mantenimiento y mejora del servicio.' },
+          { title: '7. Subencargados del tratamiento', content: 'Controlease podr\u00e1 recurrir a terceros proveedores necesarios para la prestaci\u00f3n del servicio, incluyendo:', items: ['Google', 'Stripe', 'GitHub'], extra: 'El Cliente autoriza expresamente el uso de dichos subencargados.' },
+          { title: '8. Seguridad', content: 'Controlease implementa medidas de seguridad adecuadas, incluyendo:', items: ['Control de accesos', 'Cifrado', 'Copias de seguridad', 'Registro de actividad'] },
+          { title: '9. Uso de inteligencia artificial', content: 'Controlease podr\u00e1 utilizar herramientas de inteligencia artificial para la prestaci\u00f3n, automatizaci\u00f3n y mejora del servicio.\n\nEl Cliente reconoce y acepta dicho uso como parte inherente del servicio.' },
+          { title: '10. Derechos de los interesados', content: 'Controlease asistir\u00e1 al Cliente en el cumplimiento de sus obligaciones en materia de derechos de los interesados.' },
+          { title: '11. Eliminaci\u00f3n y portabilidad de datos', content: 'El Cliente podr\u00e1:', items: ['Exportar sus datos', 'Solicitar su eliminaci\u00f3n'], extra: 'Tras la finalizaci\u00f3n del servicio, los datos ser\u00e1n eliminados o devueltos seg\u00fan corresponda.' },
+          { title: '12. Responsabilidad', content: 'Controlease no ser\u00e1 responsable del uso indebido de la plataforma por parte del Cliente.' },
+          { title: '13. Limitaci\u00f3n de responsabilidad', content: 'La responsabilidad total de Controlease quedar\u00e1 limitada al importe abonado por el Cliente en los doce (12) meses anteriores al hecho que origine la reclamaci\u00f3n.\n\nEn ning\u00fan caso Controlease ser\u00e1 responsable por da\u00f1os indirectos, lucro cesante, p\u00e9rdida de negocio o da\u00f1os reputacionales.' },
+          { title: '14. Terminaci\u00f3n', content: 'El Cliente podr\u00e1 cancelar el servicio conforme a las condiciones de su suscripci\u00f3n.' },
+          { title: '15. Legislaci\u00f3n aplicable', content: 'El presente contrato se regir\u00e1 por la legislaci\u00f3n espa\u00f1ola.\n\nLas partes se someten a los Juzgados y Tribunales del domicilio del Contratante.' },
+        ]
+      },
+      cookies: {
+        title: 'Pol\u00edtica de Cookies',
+        sections: [
+          { title: '1. \u00bfQu\u00e9 son las cookies?', content: 'Las cookies son peque\u00f1os archivos de texto que se almacenan en el dispositivo del usuario cuando visita una p\u00e1gina web. Permiten que la web funcione correctamente y ayudan a mejorar la experiencia del usuario.' },
+          { title: '2. Tipos de cookies utilizadas', content: 'Controlease utiliza las siguientes categor\u00edas de cookies:', subsections: [
+            { title: 'a) Cookies t\u00e9cnicas (necesarias)', content: 'Son aquellas imprescindibles para el funcionamiento de la web. Incluyen:', items: ['Gesti\u00f3n de sesi\u00f3n', 'Seguridad y autenticaci\u00f3n', 'Funcionamiento b\u00e1sico del sitio'], extra: 'Estas cookies no requieren consentimiento del usuario.' },
+            { title: 'b) Cookies anal\u00edticas y publicitarias (uso futuro)', content: 'Actualmente, Controlease no utiliza cookies anal\u00edticas ni publicitarias.\n\nNo obstante, en el futuro podr\u00edan implementarse herramientas de an\u00e1lisis o marketing que permitan:', items: ['Analizar el tr\u00e1fico web', 'Medir el rendimiento', 'Realizar acciones publicitarias'], extra: 'En ese caso, se solicitar\u00e1 el consentimiento previo del usuario.' },
+          ]},
+          { title: '3. Cookies de terceros', content: 'En caso de implementarse cookies anal\u00edticas o publicitarias, podr\u00edan intervenir proveedores externos como:', items: ['Google', 'LinkedIn'] },
+          { title: '4. Gesti\u00f3n de cookies', content: 'El usuario puede configurar su navegador para:', items: ['Bloquear cookies', 'Eliminar cookies', 'Recibir avisos antes de su instalaci\u00f3n'], extra: 'La desactivaci\u00f3n de ciertas cookies puede afectar al funcionamiento de la web.' },
+          { title: '5. Actualizaciones', content: 'Esta Pol\u00edtica de Cookies podr\u00e1 actualizarse en funci\u00f3n de cambios legales o t\u00e9cnicos.' },
+        ]
       },
       securityPage: {
         title: 'Seguridad',
         sections: {
           commitment: {
             title: '1. Nuestro Compromiso con la Seguridad',
-            content: 'En Controlease, la seguridad no es solo una característica, es la base de nuestra plataforma. Entendemos que confía en nosotros con los datos más sensibles de su cartera de arrendamientos, métricas financieras y planes estratégicos. Empleamos medidas de seguridad de nivel empresarial para garantizar que sus datos permanezcan confidenciales, protegidos en su integridad y disponibles cuando los necesite.'
+            content: 'En Controlease, la seguridad no es solo una caracter\u00edstica, es la base de nuestra plataforma. Entendemos que conf\u00eda en nosotros con los datos m\u00e1s sensibles de su cartera de arrendamientos, m\u00e9tricas financieras y planes estrat\u00e9gicos. Empleamos medidas de seguridad de nivel empresarial para garantizar que sus datos permanezcan confidenciales, protegidos en su integridad y disponibles cuando los necesite.'
           },
           dataProtection: {
-            title: '2. Protección de Datos',
-            encryption: { title: 'Cifrado', content: 'Todos los datos están cifrados en tránsito usando TLS 1.3 y en reposo usando cifrado AES-256. Utilizamos servicios de gestión de claves estándar de la industria para proteger las claves de cifrado.' },
-            isolation: { title: 'Aislamiento de Datos', content: 'Los datos del cliente están separados lógicamente en nuestra arquitectura multi-inquilino. Los controles de acceso estrictos aseguran que un inquilino no pueda acceder a los datos de otro inquilino.' }
+            title: '2. Protecci\u00f3n de Datos',
+            encryption: { title: 'Cifrado', content: 'Todos los datos est\u00e1n cifrados en tr\u00e1nsito usando TLS 1.3 y en reposo usando cifrado AES-256. Utilizamos servicios de gesti\u00f3n de claves est\u00e1ndar de la industria para proteger las claves de cifrado.' },
+            isolation: { title: 'Aislamiento de Datos', content: 'Los datos del cliente est\u00e1n separados l\u00f3gicamente en nuestra arquitectura multi-inquilino. Los controles de acceso estrictos aseguran que un inquilino no pueda acceder a los datos de otro inquilino.' }
           },
           infrastructure: {
             title: '3. Seguridad de Infraestructura',
             items: {
-              cloud: { label: 'Seguridad en la Nube', content: 'Nuestra infraestructura está alojada en proveedores de nube de primer nivel (AWS/GCP/Azure) con certificaciones SOC 2 Tipo II.' },
-              network: { label: 'Protección de Red', content: 'Empleamos Firewalls de Aplicaciones Web (WAF), protección DDoS y aislamiento de Nube Privada Virtual (VPC) para proteger nuestros servicios.' },
+              cloud: { label: 'Seguridad en la Nube', content: 'Nuestra infraestructura est\u00e1 alojada en proveedores de nube de primer nivel (AWS/GCP/Azure) con certificaciones SOC 2 Tipo II.' },
+              network: { label: 'Protecci\u00f3n de Red', content: 'Empleamos Firewalls de Aplicaciones Web (WAF), protecci\u00f3n DDoS y aislamiento de Nube Privada Virtual (VPC) para proteger nuestros servicios.' },
               monitoring: { label: 'Monitoreo', content: 'Sistemas de monitoreo y alerta de seguridad automatizados 24/7 para detectar y responder a actividades sospechosas inmediatamente.' }
             }
           },
           compliance: {
             title: '4. Cumplimiento y Gobernanza',
-            content: 'Alineamos nuestras prácticas de seguridad con estándares internacionales incluyendo SOC 2, ISO 27001 y GDPR. Se realizan pruebas de penetración y evaluaciones de vulnerabilidad regulares por terceros para validar nuestra postura de seguridad.'
+            content: 'Alineamos nuestras pr\u00e1cticas de seguridad con est\u00e1ndares internacionales incluyendo SOC 2, ISO 27001 y GDPR. Se realizan pruebas de penetraci\u00f3n y evaluaciones de vulnerabilidad regulares por terceros para validar nuestra postura de seguridad.'
           },
           accessControl: {
             title: '5. Control de Acceso',
-            content: 'Controlease soporta Single Sign-On (SSO) vía SAML 2.0 y OIDC, permitiéndole gestionar el acceso de usuarios a través de su propio proveedor de identidad. Exigimos Autenticación Multi-Factor (MFA) para todo acceso administrativo.'
+            content: 'Controlease soporta Single Sign-On (SSO) v\u00eda SAML 2.0 y OIDC, permiti\u00e9ndole gestionar el acceso de usuarios a trav\u00e9s de su propio proveedor de identidad. Exigimos Autenticaci\u00f3n Multi-Factor (MFA) para todo acceso administrativo.'
           },
           reporting: {
             title: '6. Reportar Problemas',
-            content: 'Si cree que ha encontrado una vulnerabilidad de seguridad en Controlease, por favor repórtela inmediatamente a security@controlease.com. Operamos un programa de divulgación responsable y trabajaremos con usted para remediar el problema.'
+            content: 'Si cree que ha encontrado una vulnerabilidad de seguridad en Controlease, por favor rep\u00f3rtela inmediatamente a security@controlease.com. Operamos un programa de divulgaci\u00f3n responsable y trabajaremos con usted para remediar el problema.'
           }
         }
       }
+    },
+    cookieBanner: {
+      text: 'Utilizamos cookies t\u00e9cnicas necesarias para el correcto funcionamiento de la web.',
+      link: 'Puedes obtener m\u00e1s informaci\u00f3n en nuestra Pol\u00edtica de Cookies.',
+      accept: 'Aceptar',
     },
     security: {
       hero: {
@@ -3318,9 +3310,10 @@ const translations = {
         ],
         legal: [
           { label: 'Privacidade', to: '/privacy' },
-          { label: 'Termos de Serviço', to: '/terms' },
+          { label: 'Termos de Servi\u00e7o', to: '/terms' },
+          { label: 'Cookies', to: '/cookies' },
         ],
-        rights: '© 2025 Controlease Inc. Todos os direitos reservados.',
+        rights: '\u00a9 2025 Controlease. Todos os direitos reservados.',
       },
     },
     partners: {
@@ -3529,7 +3522,8 @@ const translations = {
             general: 'Consulta geral',
             sales: 'Vendas e Demo',
             support: 'Suporte técnico',
-            partnership: 'Parceria'
+            partnership: 'Parceria',
+            careers: 'Vagas'
           }
         },
         success: {
@@ -3556,66 +3550,55 @@ const translations = {
       rights: 'Todos os direitos reservados.',
     },
     legal: {
-      lastUpdated: 'Última atualização',
+      lastUpdated: '\u00daltima atualiza\u00e7\u00e3o',
+      date: '7 de maio de 2026',
       privacy: {
-        title: 'Política de Privacidade',
-        sections: {
-          intro: {
-            title: '1. Introdução',
-            content: 'Na Controlease, levamos sua privacidade a sério. Esta Política de Privacidade explica como coletamos, usamos, divulgamos e protegemos suas informações quando você visita nosso site ou usa nossos serviços. Por favor, leia esta política de privacidade cuidadosamente. Se você não concordar com os termos desta política de privacidade, por favor não acesse o site.'
-          },
-          collection: {
-            title: '2. Coleta de Suas Informações',
-            content: 'Podemos coletar informações sobre você de várias formas. As informações que podemos coletar no Site incluem:',
-            items: {
-              personal: { label: 'Dados Pessoais', content: 'Informações de identificação pessoal, como seu nome, endereço de entrega, endereço de e-mail e número de telefone, e informações demográficas, como sua idade, gênero, cidade natal e interesses, que você nos fornece voluntariamente quando se registra no Site ou quando escolhe participar de várias atividades relacionadas ao Site.' },
-              derivative: { label: 'Dados Derivados', content: 'Informações que nossos servidores coletam automaticamente quando você acessa o Site, como seu endereço IP, tipo de navegador, sistema operacional, horários de acesso e as páginas que você visualizou diretamente antes e depois de acessar o Site.' }
-            }
-          },
-          use: {
-            title: '3. Uso de Suas Informações',
-            content: 'Ter informações precisas sobre você nos permite fornecer uma experiência fluida, eficiente e personalizada. Especificamente, podemos usar as informações coletadas sobre você através do Site para:',
-            items: ['Criar e gerenciar sua conta.', 'Processar suas transações e operações de locação.', 'Enviar e-mails sobre sua conta ou pedido.', 'Cumprir e gerenciar compras, pedidos, pagamentos e outras transações relacionadas ao Site.', 'Gerar um perfil pessoal sobre você para tornar futuras visitas ao Site mais personalizadas.']
-          },
-          disclosure: {
-            title: '4. Divulgação de Suas Informações',
-            content: 'Podemos compartilhar informações que coletamos sobre você em certas situações. Suas informações podem ser divulgadas da seguinte forma:',
-            items: {
-              law: { label: 'Por Lei ou para Proteger Direitos', content: 'Se acreditarmos que a divulgação de informações sobre você é necessária para responder a um processo legal, investigar ou remediar possíveis violações de nossas políticas, ou proteger os direitos, propriedade e segurança de outros, podemos compartilhar suas informações conforme permitido ou exigido por qualquer lei, regra ou regulamento aplicável.' },
-              thirdParty: { label: 'Prestadores de Serviços Terceiros', content: 'Podemos compartilhar suas informações com terceiros que realizam serviços para nós ou em nosso nome, incluindo processamento de pagamentos, análise de dados, entrega de e-mail, serviços de hospedagem, atendimento ao cliente e assistência de marketing.' }
-            }
-          },
-          contact: {
-            title: '5. Contate-nos',
-            content: 'Se você tiver perguntas ou comentários sobre esta Política de Privacidade, entre em contato conosco em:'
-          }
-        }
+        title: 'Pol\u00edtica de Privacidade',
+        sections: [
+          { title: '1. Controlador de Dados', content: 'O controlador de dados \u00e9 CORBITAL TECH, S.L. (doravante, "Controlease"), com NIF B44995389 e sede em P\u00ba de la Castellana, 194, 28046 Madrid, Espanha.\n\nEmail de contato: support@controlease.net' },
+          { title: '2. Finalidade do Tratamento', content: 'Os dados pessoais s\u00e3o tratados para as seguintes finalidades:', items: ['Gest\u00e3o de consultas e solicita\u00e7\u00f5es de contato', 'Presta\u00e7\u00e3o do servi\u00e7o SaaS Controlease', 'Gest\u00e3o administrativa e contratual', 'Suporte t\u00e9cnico e melhoria do servi\u00e7o'] },
+          { title: '3. Base Legal', content: 'O tratamento baseia-se em:', items: ['Execu\u00e7\u00e3o de contrato', 'Interesse leg\u00edtimo (melhoria e suporte do servi\u00e7o)', 'Consentimento do usu\u00e1rio (quando aplic\u00e1vel)'] },
+          { title: '4. Categorias de Dados', content: 'Processamos:', items: ['Dados de identifica\u00e7\u00e3o (nome, email, telefone)', 'Dados profissionais (empresa, cargo)', 'Dados inclu\u00eddos em contratos de loca\u00e7\u00e3o'], extra: 'N\u00e3o processamos categorias especiais de dados pessoais.' },
+          { title: '5. Destinat\u00e1rios dos Dados', content: 'Utilizamos provedores terceiros como processadores de dados, incluindo:', items: ['Google', 'Stripe', 'HubSpot', 'GitHub'], extra: 'Tamb\u00e9m podemos usar ferramentas de intelig\u00eancia artificial como parte do servi\u00e7o.' },
+          { title: '6. Transfer\u00eancias Internacionais', content: 'Alguns provedores podem envolver transfer\u00eancias internacionais de dados fora do Espa\u00e7o Econ\u00f4mico Europeu. Tais transfer\u00eancias s\u00e3o realizadas com garantias adequadas sob o RGPD.' },
+          { title: '7. Reten\u00e7\u00e3o de Dados', content: 'Os dados s\u00e3o retidos:', items: ['Durante a rela\u00e7\u00e3o contratual', 'Conforme exigido por lei', 'At\u00e9 que a exclus\u00e3o seja solicitada (quando aplic\u00e1vel)'] },
+          { title: '8. Direitos do Usu\u00e1rio', content: 'Os usu\u00e1rios podem exercer:', items: ['Acesso', 'Retifica\u00e7\u00e3o', 'Exclus\u00e3o', 'Restri\u00e7\u00e3o', 'Portabilidade', 'Oposi\u00e7\u00e3o'], extra: 'Solicita\u00e7\u00f5es podem ser enviadas para: privacy@controlease.com\n\nOs usu\u00e1rios tamb\u00e9m podem apresentar reclama\u00e7\u00e3o junto \u00e0 Ag\u00eancia Espanhola de Prote\u00e7\u00e3o de Dados.' },
+          { title: '9. Seguran\u00e7a', content: 'Implementamos medidas t\u00e9cnicas e organizacionais adequadas, incluindo:', items: ['Controle de acesso', 'Criptografia', 'Backups', 'Registro de atividade'] },
+          { title: '10. Altera\u00e7\u00f5es', content: 'Podemos atualizar esta pol\u00edtica para refletir mudan\u00e7as legais ou t\u00e9cnicas.' },
+        ]
       },
       terms: {
-        title: 'Termos de Serviço',
-        sections: {
-          agreement: {
-            title: '1. Acordo de Termos',
-            content: 'Estes Termos de Serviço constituem um acordo legalmente vinculativo entre você, seja pessoalmente ou em nome de uma entidade ("você") e Controlease Inc. ("nós" ou "nosso"), com relação ao seu acesso e uso do site da Controlease, bem como qualquer outra forma de mídia, canal de mídia, site móvel ou aplicativo móvel relacionado, vinculado ou de outra forma conectado (coletivamente, o "Site").'
-          },
-          intellectual: {
-            title: '2. Direitos de Propriedade Intelectual',
-            content: 'A menos que indicado de outra forma, o Site é nossa propriedade exclusiva e todo o código-fonte, bancos de dados, funcionalidade, software, designs de sites, áudio, vídeo, texto, fotografias e gráficos no Site (coletivamente, o "Conteúdo") e as marcas comerciais, marcas de serviço e logotipos nele contidos (as "Marcas") são de nossa propriedade ou licenciados para nós, e são protegidos por leis de direitos autorais e marcas comerciais e vários outros direitos de propriedade intelectual.'
-          },
-          userRep: {
-            title: '3. Representações do Usuário',
-            content: 'Ao usar o Site, você representa e garante que:',
-            items: ['Todas as informações de registro que você enviar serão verdadeiras, precisas, atuais e completas.', 'Você manterá a precisão de tais informações e atualizará prontamente tais informações de registro conforme necessário.', 'Você tem capacidade legal e concorda em cumprir estes Termos de Serviço.', 'Você não é menor de idade na jurisdição em que reside.', 'Você não acessará o Site por meios automatizados ou não humanos, seja através de um bot, script ou de outra forma.']
-          },
-          prohibited: {
-            title: '4. Atividades Proibidas',
-            content: 'Você não pode acessar ou usar o Site para qualquer finalidade que não seja aquela para a qual disponibilizamos o Site. O Site não pode ser usado em conexão com quaisquer empreendimentos comerciais, exceto aqueles que são especificamente endossados ou aprovados por nós.'
-          },
-          termination: {
-            title: '5. Prazo e Rescisão',
-            content: 'Estes Termos de Serviço permanecerão em pleno vigor e efeito enquanto você usar o Site. SEM LIMITAR QUALQUER OUTRA DISPOSIÇÃO DESTES TERMOS DE SERVIÇO, RESERVAMO-NOS O DIREITO DE, A NOSSO EXCLUSIVO CRITÉRIO E SEM AVISO PRÉVIO OU RESPONSABILIDADE, NEGAR ACESSO E USO DO SITE (INCLUINDO O BLOQUEIO DE CERTOS ENDEREÇOS IP), A QUALQUER PESSOA POR QUALQUER MOTIVO OU SEM MOTIVO, INCLUINDO SEM LIMITAÇÃO POR VIOLAÇÃO DE QUALQUER REPRESENTAÇÃO, GARANTIA OU ACORDO CONTIDO NESTES TERMOS DE SERVIÇO OU DE QUALQUER LEI OU REGULAMENTO APLICÁVEL.'
-          }
-        }
+        title: 'Termos de Servi\u00e7o',
+        sections: [
+          { title: '1. Descri\u00e7\u00e3o do Servi\u00e7o', content: 'Controlease \u00e9 uma solu\u00e7\u00e3o SaaS fornecida pela CORBITAL TECH, S.L. para gest\u00e3o de contratos de loca\u00e7\u00e3o e dados relacionados.' },
+          { title: '2. Acesso e Uso', content: 'O Cliente concorda em:', items: ['Usar a plataforma em conformidade com as leis aplic\u00e1veis', 'N\u00e3o carregar dados il\u00edcitos ou n\u00e3o autorizados', 'Manter as credenciais de acesso confidenciais'] },
+          { title: '3. Modelo de Assinatura', content: 'O servi\u00e7o \u00e9 fornecido em base de assinatura mensal ou anual, renov\u00e1vel automaticamente salvo cancelamento.' },
+          { title: '4. Disponibilidade do Servi\u00e7o', content: 'Controlease far\u00e1 esfor\u00e7os razo\u00e1veis para garantir a disponibilidade do servi\u00e7o, mas n\u00e3o garante acesso ininterrupto.' },
+          { title: '5. Propriedade Intelectual', content: 'Todos os direitos relacionados ao software permanecem com CORBITAL TECH, S.L.\n\nO Cliente recebe um direito limitado e n\u00e3o exclusivo de usar a plataforma.' },
+          { title: '6. Processamento de Dados (DPA)', content: '6.1 Fun\u00e7\u00f5es\nO Cliente atua como Controlador de Dados e Controlease como Processador de Dados.\n\n6.2 Finalidade\nO processamento \u00e9 limitado \u00e0 presta\u00e7\u00e3o do servi\u00e7o SaaS.\n\n6.3 Tipos de Dados\nDados pessoais inclu\u00eddos em contratos de loca\u00e7\u00e3o.\n\n6.4 Acesso\nControlease pode acessar dados apenas para fins de suporte e manuten\u00e7\u00e3o.' },
+          { title: '7. Subprocessadores', content: 'Controlease pode usar provedores terceiros, incluindo:', items: ['Google', 'Stripe', 'GitHub'], extra: 'O Cliente autoriza o uso destes subprocessadores.' },
+          { title: '8. Seguran\u00e7a', content: 'Implementamos medidas de seguran\u00e7a adequadas incluindo:', items: ['Controle de acesso', 'Criptografia', 'Backups', 'Registro'] },
+          { title: '9. Uso de Intelig\u00eancia Artificial', content: 'Controlease pode usar ferramentas de IA para melhorar e automatizar o servi\u00e7o.\n\nO Cliente reconhece e aceita isso como parte do servi\u00e7o.' },
+          { title: '10. Direitos dos Titulares', content: 'Controlease auxiliar\u00e1 o Cliente no tratamento de solicita\u00e7\u00f5es de direitos dos titulares.' },
+          { title: '11. Exclus\u00e3o e Portabilidade de Dados', content: 'Os clientes podem exportar ou solicitar a exclus\u00e3o de seus dados.\n\nAp\u00f3s a rescis\u00e3o, os dados ser\u00e3o exclu\u00eddos ou devolvidos.' },
+          { title: '12. Responsabilidade', content: 'Controlease n\u00e3o \u00e9 respons\u00e1vel pelo uso indevido da plataforma pelo Cliente.' },
+          { title: '13. Limita\u00e7\u00e3o de Responsabilidade', content: 'A responsabilidade total \u00e9 limitada ao valor pago pelo Cliente nos 12 meses anteriores.\n\nControlease n\u00e3o ser\u00e1 respons\u00e1vel por danos indiretos, perda de lucros ou danos reputacionais.' },
+          { title: '14. Rescis\u00e3o', content: 'O Cliente pode cancelar conforme os termos da assinatura.' },
+          { title: '15. Lei Aplic\u00e1vel', content: 'Este acordo \u00e9 regido pela lei espanhola.\n\nA jurisdi\u00e7\u00e3o corresponde aos tribunais do domic\u00edlio do Cliente.' },
+        ]
+      },
+      cookies: {
+        title: 'Pol\u00edtica de Cookies',
+        sections: [
+          { title: '1. O que s\u00e3o cookies?', content: 'Cookies s\u00e3o pequenos arquivos de texto armazenados no seu dispositivo quando voc\u00ea visita um site. Eles permitem que o site funcione corretamente, melhorem a experi\u00eancia do usu\u00e1rio e coletem informa\u00e7\u00f5es sobre o uso.' },
+          { title: '2. Tipos de cookies usados', content: 'Controlease usa os seguintes tipos de cookies:', subsections: [
+            { title: 'a) Cookies estritamente necess\u00e1rios', content: 'Estes cookies s\u00e3o essenciais para o funcionamento do site. Incluem:', items: ['Gest\u00e3o de sess\u00e3o', 'Seguran\u00e7a e autentica\u00e7\u00e3o', 'Funcionalidade b\u00e1sica do site'], extra: 'Estes cookies n\u00e3o requerem consentimento do usu\u00e1rio.' },
+            { title: 'b) Cookies anal\u00edticos e de marketing', content: 'Atualmente, Controlease n\u00e3o usa cookies anal\u00edticos ou publicit\u00e1rios.\n\nNo entanto, no futuro, podemos implementar ferramentas como:', items: ['An\u00e1lise de tr\u00e1fego', 'Medi\u00e7\u00e3o de desempenho', 'Rastreamento de marketing'], extra: 'Nesses casos, ser\u00e1 solicitado o consentimento pr\u00e9vio do usu\u00e1rio.' },
+          ]},
+          { title: '3. Cookies de terceiros', content: 'Se ferramentas anal\u00edticas ou de marketing forem implementadas, provedores terceiros podem colocar cookies nos dispositivos dos usu\u00e1rios.\n\nEstes provedores podem incluir:', items: ['Google', 'LinkedIn'] },
+          { title: '4. Como gerenciar cookies', content: 'Os usu\u00e1rios podem configurar seu navegador para:', items: ['Bloquear cookies', 'Excluir cookies', 'Receber alertas quando cookies s\u00e3o usados'], extra: 'Observe que desativar certos cookies pode afetar a funcionalidade do site.' },
+          { title: '5. Atualiza\u00e7\u00f5es', content: 'Esta Pol\u00edtica de Cookies pode ser atualizada para refletir mudan\u00e7as nos requisitos legais ou no uso de cookies no site.' },
+        ]
       },
       securityPage: {
         title: 'Segurança',
@@ -3652,10 +3635,15 @@ const translations = {
         }
       }
     },
+    cookieBanner: {
+      text: 'Utilizamos cookies essenciais para garantir o bom funcionamento do nosso site.',
+      link: 'Para mais informa\u00e7\u00f5es, consulte nossa Pol\u00edtica de Cookies.',
+      accept: 'Aceitar',
+    },
     security: {
       hero: {
-        badge: 'Segurança Empresarial',
-        title: 'Segurança em que Você Pode Confiar',
+        badge: 'Seguran\u00e7a Empresarial',
+        title: 'Seguran\u00e7a em que Voc\u00ea Pode Confiar',
         description: 'Os dados do seu portfólio de locações merecem o mais alto nível de proteção. Implementamos práticas de segurança líderes do setor para manter suas informações sensíveis seguras e em conformidade.',
       },
       trust: {

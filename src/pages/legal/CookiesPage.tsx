@@ -1,9 +1,9 @@
 import { useI18n } from '../../i18n';
 import { LegalPageLayout } from './_LegalPageLayout';
 
-export const TermsPage = () => {
+export const CookiesPage = () => {
   const { dictionary } = useI18n();
-  const t = dictionary.legal.terms;
+  const t = dictionary.legal.cookies;
 
   return (
     <LegalPageLayout

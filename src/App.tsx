@@ -12,6 +12,7 @@ import { PartnersPage } from './pages/partners/PartnersPage';
 import { ProgramsPage } from './pages/programs/ProgramsPage';
 import { PrivacyPage } from './pages/legal/PrivacyPage';
 import { TermsPage } from './pages/legal/TermsPage';
+import { CookiesPage } from './pages/legal/CookiesPage';
 import { SecurityPage as LegalSecurityPage } from './pages/legal/SecurityPage';
 import { SecurityPage } from './pages/security/SecurityPage';
 import { LeaseIntelligencePage } from './pages/platform/LeaseIntelligencePage';
@@ -36,6 +37,7 @@ const router = createBrowserRouter(
       <Route path="contact" element={<ContactPage />} />
       <Route path="privacy" element={<PrivacyPage />} />
       <Route path="terms" element={<TermsPage />} />
+      <Route path="cookies" element={<CookiesPage />} />
       <Route path="security" element={<SecurityPage />} />
       <Route path="legal/security" element={<LegalSecurityPage />} />
 

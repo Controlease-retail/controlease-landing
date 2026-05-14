@@ -1,20 +1,58 @@
 import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ContactForm } from '../../components/modules/ContactForm';
 import { TechCard } from '../../components/ui/TechCard';
-import { ClockIcon, PhoneIcon, BuildingOfficeIcon, CheckCircleIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
+import { ClockIcon, PhoneIcon, BuildingOfficeIcon, CheckCircleIcon, EnvelopeIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 import { StatusBadge } from '../../components/ui/StatusBadge';
 import { useI18n } from '../../i18n';
+
+const API_URL = import.meta.env.VITE_API_URL || '';
+const API_KEY = import.meta.env.VITE_CONTACT_API_KEY || '';
+
+const INQUIRY_TYPE_MAP: Record<string, string> = {
+  general: 'general',
+  sales: 'sales',
+  support: 'support',
+  partnership: 'partnership',
+  careers: 'careers',
+};
 
 export const ContactPage = () => {
   const { dictionary } = useI18n();
   const t = dictionary.contactPage;
+  const [searchParams] = useSearchParams();
 
-  const [formStatus, setFormStatus] = useState<'idle' | 'success'>('idle');
+  const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleFormSubmit = () => {
-    setFormStatus('success');
-    setTimeout(() => setFormStatus('idle'), 5000);
+  const defaultType = searchParams.get('type');
+  const defaultMessageType = defaultType && INQUIRY_TYPE_MAP[defaultType] ? defaultType : undefined;
+
+  const handleFormSubmit = async (data: { name: string; email: string; company: string; phone: string; messageType: string; message: string }) => {
+    try {
+      const res = await fetch(`${API_URL}/public/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-Key': API_KEY,
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          phone: data.phone,
+          inquiry_type: data.messageType,
+          message: data.message,
+        }),
+      });
+
+      if (!res.ok) throw new Error('Failed to send');
+      setFormStatus('success');
+      setTimeout(() => setFormStatus('idle'), 8000);
+    } catch {
+      setFormStatus('error');
+      setTimeout(() => setFormStatus('idle'), 5000);
+    }
   };
 
   return (
@@ -87,8 +125,29 @@ export const ContactPage = () => {
                     {t.form.success.sendAnother}
                   </button>
                 </motion.div>
+              ) : formStatus === 'error' ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="flex flex-col items-center justify-center py-12 text-center"
+                >
+                  <div className="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-4 text-red-500">
+                    <ExclamationTriangleIcon className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-[color:var(--color-text)] mb-2">Error</h3>
+                  <p className="text-[color:var(--color-text-muted)]">
+                    Something went wrong. Please try again or email us directly.
+                  </p>
+                  <button
+                    onClick={() => setFormStatus('idle')}
+                    className="mt-6 text-accent font-medium hover:underline"
+                  >
+                    Try again
+                  </button>
+                </motion.div>
               ) : (
-                <ContactForm onSubmit={handleFormSubmit} />
+                <ContactForm onSubmit={handleFormSubmit} defaultMessageType={defaultMessageType} />
               )}
             </AnimatePresence>
           </div>
@@ -143,7 +202,7 @@ export const ContactPage = () => {
               <div className="space-y-4">
                 <p className="text-[color:var(--color-text-muted)]">
                   Paseo de la Castellana 194<br />
-                  Chamartín, Madrid, España
+                  Chamart&iacute;n, Madrid, Espa&ntilde;a
                 </p>
                 <div className="pt-4 border-t border-[color:var(--color-border)] space-y-3">
                   <a href="mailto:info@controlease.net" className="flex items-center gap-3 text-[color:var(--color-text-muted)] hover:text-accent transition-colors">

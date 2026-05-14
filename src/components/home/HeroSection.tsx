@@ -185,7 +185,7 @@ export const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.9 }}
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               >
-                <Link to="/contact" className="w-full sm:w-auto">
+                <Link to="/contact?type=sales" className="w-full sm:w-auto">
                   <motion.button
                     whileTap={{ scale: 0.95 }}
                     className="group relative w-full sm:w-auto flex items-center justify-center gap-2 rounded-md border border-transparent bg-accent px-8 py-3 sm:py-4 text-base font-medium text-white shadow-lg hover:bg-accent-light focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[color:var(--color-secondary)]"

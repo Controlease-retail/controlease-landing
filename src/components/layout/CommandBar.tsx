@@ -151,7 +151,7 @@ export const CommandBar = () => {
               <a href="https://app.controlease.net/login" className="text-sm font-medium text-white/90 hover:text-white transition-colors hidden sm:block">
                  {signIn}
               </a>
-              <Link to="/contact" className="rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold bg-[var(--color-accent)] text-white transition hover:opacity-90 hover:shadow-lg hover:shadow-[0_0_15px_rgba(242,102,114,0.4)]">
+              <Link to="/contact?type=sales" className="rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-semibold bg-[var(--color-accent)] text-white transition hover:opacity-90 hover:shadow-lg hover:shadow-[0_0_15px_rgba(242,102,114,0.4)]">
                  {requestDemo}
               </Link>
            </div>
